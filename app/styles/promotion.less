@@ -1,0 +1,96 @@
+.promotion {
+  overflow:hidden;
+  .text-stuff {
+    position:absolute;
+    height:100%;
+    width:29em;
+    font-size:0.9em;
+    right:0;
+    top:0;
+    bottom:0;
+    left:auto;
+    background:fade(white, 20%);
+    color:white;
+    display:block;
+    margin:0;
+    border:0;
+    overflow:hidden;
+    .text-stuff-center-container {
+      position:absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      width:100%;
+      height:100%;
+      display:table;
+      .text-stuff-center {
+        padding:0.75em;
+        display:table-cell;
+        vertical-align:middle;
+      }
+    }
+  }
+  .promotion-inner {
+    height:21rem;
+    position:relative;
+    .background-size(cover);
+    .title {
+      .knockout;
+      font-size:2.3em;
+      color:white;
+      margin: -0.1em 0 0.25em 0;//negative margin cuz shitty font. :(
+      text-align:left;
+    }
+  }
+  .button {
+    margin-top:0.5em;
+    display:block;
+  }
+  .promo-img {
+    display:none;
+    height:10em;
+    .background-size(cover);
+  }
+  @media all and (max-width:780px){
+    .promo-img {
+      display:block;
+    }
+    .promotion-inner {
+      height:auto;
+      .title {
+        font-size: 1.7em;
+      }
+    }
+    .text-stuff {
+      font-size:1em;
+      width:100%;
+      position:relative;
+    }
+    .text-stuff .text-stuff-center-container {
+      position:relative;
+      min-height: 12rem;
+      display:block;
+      .text-stuff-center {
+        .content {
+          p {
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+          }
+        }
+        display:block;
+        padding-bottom:4rem;
+        .button {
+          font-size: 1.7em;
+          margin:0;
+          position:absolute;
+          bottom:0;
+          background:grey;
+          left:0;
+          width:100%;
+        }
+      }
+    }
+  }  
+}

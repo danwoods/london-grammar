@@ -1,0 +1,11 @@
+<article class="product big">
+    <div class="image-container">
+        <a href="{{p.sales_links[0].link_url}}" target="_blank">
+            <img src="{{p.image.sizes.full.url}}" alt="{{p.image.alt}}" title="{{p.image.title}}" height="{{p.image.sizes.full.height}}" width="{{p.image.sizes.full.width}}"/>
+       </a>
+    </div>
+    <div class="content-wrapper">
+        <div class="description" ng-bind-html="p.content"></div>
+        <a class="button buy-button fade-in" ng-repeat="b in p.sales_links" ng-href="{{b.link_url}}">{{b.link_text}}</a>
+    </div>
+</article>

@@ -33,7 +33,7 @@ module.exports = function (grunt) {
             files: [{
                 expand: true,
                 cwd: '<%= yeoman.app %>/styles',
-                src: '{,*/}*.less',
+                src: 'main.less',
                 dest: '.tmp/styles/',
                 ext: '.css'
             }]
@@ -367,6 +367,7 @@ module.exports = function (grunt) {
       'bowerInstall',
       'concurrent:server',
       'autoprefixer',
+      'recess',
       'connect:livereload',
       'watch'
     ]);
