@@ -1,0 +1,460 @@
+@orange: #f8aa3a;
+@orange2: #f97d01;
+@turquoise: #24bbbf;
+@facebook: #3b5998;
+@google: rgb(229,45,39);
+@twitter: #00aced;
+@instagram: #3f729b;
+@pinterest: #c8232c;
+@tumblr: #34526f;
+@red: #f15440;
+@grey1: #171717;
+@grey2: #484848;
+@grey3: #9f9f9f;
+@grey4: #ebebeb;
+@dark:  #303030;
+@spotify: #81b71a;
+
+
+
+.helvetica {
+
+}
+.knockout {
+
+}
+.veneer {
+
+}
+
+.HWRENDER {
+  .transform( translate3d(0px,0px,0px) );  
+}
+
+body {
+  .helvetica;
+  font-size:14.5px;
+  line-height:1.2em;
+  -webkit-font-smoothing: antialiased;
+  font-weight:400;
+  @media all and (max-width:650px){
+    font-size: 14px;
+  }  
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color:@grey2;
+  line-height: 1em;
+}
+
+h1 {font-size: 2.8em;
+    text-align: center;}
+h2 {font-size:2em;}
+h3 {font-size:1.6em;}
+h4 {font-size:1.2em;}
+h5 {font-size:1.1em;}
+h6 {font-size:1em;}
+
+
+h2, h3, h4 {
+  font-weight: 400;
+  font-style: normal;
+  text-transform:uppercase;
+}
+
+h4 {
+  color:@grey3;
+}
+
+a, a:hover, a:visited {
+  color:inherit;
+  text-decoration:none;
+}
+
+p a, p a:visited {
+ color:@turquoise; 
+}
+
+img {
+  width:auto;
+  max-width:100%;
+  height:auto;
+}
+
+ h1.superbig {
+      font-size: 14em;
+      line-height: 1em;
+      margin: 0;
+      color:@turquoise;
+    } 
+
+.wrapper {
+  max-width:1100px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.button.stripe {
+  background-image:url('../images/stripe.png');
+  border:1px solid transparent;
+  &:hover {
+    background-color:rgba(255,255,255,0.3);
+    border:1px solid;
+  }
+}
+
+.button {
+  padding:0.1em 0.5em 0.2em 0.5em;
+  cursor:pointer;
+  font-size:2em;
+  text-align:center;
+  line-height:1em;
+  transition:all 0.5s;
+}
+
+.clearfix {
+  clear:both;display:block;
+}
+
+.section {
+  &.top {
+    padding-top:0;
+    .section-divider.top {
+      display:none;
+    }
+  }
+  margin:0 -2em;
+  position:relative;
+  padding:2em;
+  &:nth-of-type(odd){
+    background-color:#ebebeb;
+  }
+}
+
+.section-title {
+  margin-top:0;
+  margin-bottom: 0.4em;
+}
+.section-subtitle {
+  margin-top: -1rem;
+  text-align: center;
+}
+.section-inner {
+ 
+}
+.section-divider {
+  background-image:url('../images/divider.png');
+  width:42px;
+  height:7px;
+  position:absolute;
+  left:50%;
+  margin-left:-21px;
+  &.top {
+    top:-3.5px;
+  }
+  &.bottom {
+    bottom:-3.5px;
+  }
+}
+
+
+.flexy-box {
+  display:inline-block;
+  vertical-align:top;
+  @media all and (max-width:500px){
+    width:50%;
+  }
+  
+  @media all and (min-width:500px){
+    width:(100%/2);
+  }
+  @media all and (min-width:700px){
+    width:(100%/3);
+  }
+  @media all and (min-width:800px){
+    width:(100%/4);
+  }  
+}
+
+.link-overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:5;
+}
+.wp-smiley {
+  width:auto;
+}
+
+.load-more {
+  .veneer;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 2rem;
+  .transition(none);
+  display:block;
+  &:hover {
+    color:@red;
+  }
+}
+
+
+.by-line {
+ color:@grey3;
+ font-size:0.8em; 
+ margin-left:0.25em;
+}
+/* social buttons */
+
+.engage-button {
+    .engage-button-inner {
+      .HWRENDER;
+      margin:1rem;
+      display: block;
+      color: white;
+      padding-top: 0.2em;
+      text-transform: uppercase;
+      font-size: 1.7em;
+      @media all and (max-width:850px){
+        font-size:1.5em;
+        min-height:2.5em; 
+      }
+      @media all and (max-width:500px){
+        font-size:1.2em; 
+      }
+      line-height:1em;
+      background-image:none;
+      border:none;
+      &:hover {
+        opacity:0.8;
+      }
+      .fa {
+        margin-left:0.2em;
+        margin-right: 0.6em;
+      }
+      &.facebook {
+        background-color:@facebook;
+      }
+      &.email {
+        background-color:@turquoise;
+      }
+      &.twitter {
+        background-color:@twitter;
+      }
+      &.google {
+        background-color:@google;
+      }
+      &.pinterest {
+        background-color:@pinterest;
+      }
+      &.youtube {
+        background-color:@google;
+      }
+      &.spotify {
+        background-color:@spotify;
+      }      
+      &.official {
+        background-color:@orange;
+      }
+    } 
+}
+
+
+
+// SHARE //
+.fa-spotify {
+  background-image: url('../images/spotify-icon.png');
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  z-index: 99999;
+  background-size: 100%;
+  background-position: 0 0;
+}
+
+.addthis_toolbox {
+  margin:0 -1rem;
+  .engage-button.facebook-like {
+    .facebook.button {
+     min-height: 1.525em;
+    cursor: default;
+    text-align: center;
+    &:hover {
+      background:@facebook;
+    }
+    }
+  }
+  .engage-button {
+    @media all and (max-width:850px){
+      .fa {
+        display:block;
+        margin:0 auto;
+      }
+      .engage-button-inner {
+       margin:0.5rem; 
+      }
+    }
+    display:inline-block;
+    width:(100%/4);
+    overflow:hidden;
+  }
+  .engage-button-inner {
+    padding:0.25em;
+  }
+}
+
+.blocker2 {//too lazy to standardise.
+  left:0;
+  opacity:0.95;
+  z-index:999;
+  text-align:center;
+  position:absolute;
+  width:100%;
+  top:350px;
+  margin-top:200px;
+  a {
+    color:@turquoise;
+  }
+}
+
+.blocker {
+  .blocker2;
+  top:0;
+  margin-top:0;
+  height:100%;
+  opacity:1;
+  background-image:url("../images/stripe.png");
+  background-color:@grey4;
+  .blocker-inner {
+    display:table;
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    .center {
+      display:table-cell;
+      vertical-align:middle;
+    }
+    .prompt {
+      b, a {
+        color:@turquoise;
+      }
+    }
+  }
+}
+
+.placeholder {
+  padding:2em;
+  background-color:pink;
+  text-align:center;
+}
+
+.carousel, .recipes-container-outer {
+    .carousel-indicators {
+      display:none;
+    }
+    position:relative;
+    .r-arrow {
+      font-size:1.7em;
+      position:absolute;
+      top:50%;
+      margin-top:-1em;
+      cursor:pointer;
+      z-index:9999;
+      .transition(1s all ease);
+      &:hover {
+        color:@orange;
+      }
+      &.next {
+        right:-2.5rem;
+        padding-left: 1.2em;
+      }
+      &.prev {
+        left:-2.5rem;
+        padding-left: 0.1em;
+      }
+      //background: red;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+    } 
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  { 
+        .r-arrow {
+          //font-size:2.5em;
+        }      
+       }
+}
+
+.seo-kludge {//FIXME: this is a horrible kludge to get addThis pinterest image share working.
+ display:block;
+ position:absolute;
+ visibility:hidden;
+ z-index:-999;
+ overflow:hidden;
+}
+
+.cursor-pointer {
+ cursor:pointer; 
+}
+
+//WP content
+
+.content {
+  @media all and (min-width:650px){
+    iframe {
+      width: 50%;
+      height: 300px;
+      margin-left: 2em;
+      margin-bottom: 2em;
+      float: right;
+      &.full-width {  
+       width:100%;
+       height:auto; 
+      }
+    }  
+  }
+ @media all and (max-width:650px){
+  iframe {
+    width:100%;
+    height:170px;
+ }
+ }
+}
+
+
+.loading-icon {
+ @media all and (max-width:650px){
+    display:none; 
+ }
+  position: fixed;
+  top: 30%;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  z-index:-1;
+  .fa {
+    font-size:4em;
+   }
+  img {
+    display:block;
+    margin:0 auto;
+  }
+}
+
+
+
+
+//temp;
+.blog.full, .album.full, article.video {
+  padding: 1.5em;
+  background: white;
+  border: 1px solid;
+  margin: 1em 0;
+}

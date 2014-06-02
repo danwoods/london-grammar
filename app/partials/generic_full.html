@@ -1,0 +1,23 @@
+<article class="blog full" blog ng-class="{ open : state }">
+	<div class="blog-inner">
+		<div class="info">
+			<a href="{{ b.link }}"><h2 class="title">{{ b.title }}</h2></a>
+			<div class="meta">
+				Posted by 
+				<span class="by-line"><a href="{{b.author.link}}">{{b.author.name}}</a></span>
+				on 
+				<span class="date">{{ b.date | time }}</span>
+			</div>
+			<div class="categories">
+				<span class="in">posted in: </span>
+				<a ng-repeat="c in b.terms" class="category" href="{{c.link}}">{{ c.name }}</a>
+			</div>
+		</div>
+		<div class="j-content" ng-bind-html="b.content">
+		</div>
+		<share></share>		
+		<div class="trigger" ng-click="state = !state">
+			<div class="expand" ng-show="!state">Read More</div>
+		</div>
+	</div>
+</article>
