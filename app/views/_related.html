@@ -1,0 +1,18 @@
+<section class="summary">
+	Hi. The following related content types were found:
+	<span ng-repeat="(key, value) in post.related"> {{key}},
+	</span>
+</section>
+
+<section class="photos section">
+	<photo-excerpt class="flexibox" ng-repeat="i in post.related.images" image="i"></photo-excerpt>	
+</section>
+<section class="videos section">
+	<article class="video" ng-repeat="v in post.related.videos">
+	    <youtube yt-id="v.youtube_object.id"></youtube>
+	    <h1>{{v.title}}</h1>
+	</article>
+</section>
+<section class="">
+	
+</section>

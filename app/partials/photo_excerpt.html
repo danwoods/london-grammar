@@ -1,0 +1,17 @@
+<article class="photo">
+    <div class="photo-inner">
+        <div class="image-container">
+            <a  ng-href="{{i.url}}" target="_blank">
+            <img ng-src="{{i.sizes.thumbnail.url}}" alt="{{i.alt}}" title="{{i.title}}" height="{{i.sizes.thumbnail.height}}" width="{{i.sizes.thumbnail.width}}"/>
+           	<div class="meta overlay">
+           		<div class="meta-inner">
+           			<h4 ng-if="i.title" class="title">{{i.title}}</h4>
+           			<div ng-if="i.caption" class="caption">{{i.caption}}</div>
+           			<div ng-if="i.description" class="description content" ng-bind-html="i.description">
+           			</div>
+           		</div>
+           	</div>
+           </a>
+        </div>
+    </div>
+</article>

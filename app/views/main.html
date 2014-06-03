@@ -1,0 +1,28 @@
+<h1>{{page.title}}</h1>
+<div class="content" ng-bind-html="page.content"></div>
+<section class="promotions">
+    <promotion ng-repeat="p in page.promotions" promotion="p"></promotion>
+</section>
+
+<section class="videos">
+    <article class="video" ng-repeat="v in videos">
+        <youtube yt-id="v.youtube_object.id"></youtube>
+        <h1>{{v.title}}</h1>
+    </article>
+</section>
+
+<section class="photos">
+	<photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
+</section>
+
+<section class="albums">
+    <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
+</section>
+
+<section class="news">
+    <ng-include src="'partials/blog_full.html'" ng-repeat="b in news"></ng-include>
+</section>
+
+<section class="contact">
+    <ng-include ng-repeat="page in contactPage" src="'views/page.html'"></ng-include>
+</section>

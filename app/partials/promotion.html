@@ -1,0 +1,23 @@
+<article class="promotion">
+    <div class="promotion-inner">
+		<a ng-if="p.promo_target != '_self'" class="link-overlay" ng-href="{{p.promo_link}}" target="_blank"></a>
+		 <a ng-if="p.promo_target == '_self'" class="link-overlay" ng-href="{{p.promo_link}}"></a>
+		 <div class="promotion-media">
+		     <div ng-if="p.video_background">
+		           <youtube-background yt-id="p.video_background.youtube_object.id"></youtube-background>
+		     </div>
+		     <div ng-if="!p.video_background">
+		         <div class="promo-img" style="background-image:url({{p.image.sizes.full.url}})"></div>
+		     </div>
+		 </div>
+        <div ng-if="p.title || p.content" class="text-stuff">
+        	<div class="text-stuff-center-container">
+	        	<div class="text-stuff-center">
+						 <h1 class="title">{{p.title}}</h1>
+						 <div class="content" ng-bind-html="p.content"></div>
+						 <div class="button stripe promotion-button">{{p.promo_text}}</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</article>

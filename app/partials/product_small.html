@@ -1,0 +1,13 @@
+<article class="product fade-in">
+    <div class="product-inner">
+        <div class="image-container">
+        	<a  ng-href="{{p.sales_links[0].link_url}}" target="_blank">
+            <img ng-src="{{p.image.sizes.thumbnail.url}}" alt="{{p.image.alt}}" title="{{p.image.title}}" height="{{p.image.sizes.thumbnail.height}}" width="{{p.image.sizes.thumbnail.width}}"/>
+           </a>
+        </div>
+        <a class="button buy-button fade-in" ng-repeat="b in p.sales_links" target="_blank" ng-href="{{b.link_url}}">{{b.link_text}}</a>        
+        <h4 class="product-title">{{p.title}}</h4>
+        <h3 class="product-rrp" ng-if="p.rrp">RRP: £{{p.rrp}}</h3>
+        <div class="description" ng-bind-html="p.content"></div>
+    </div>
+</article>

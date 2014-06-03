@@ -1,0 +1,12 @@
+<article class="photo">
+    <div class="photo-inner">
+        <div class="image-container">
+            <a  ng-href="{{i.url}}" target="_blank">
+                <img ng-src="{{i.sizes.full.url}}" alt="{{i.alt}}" title="{{i.title}}" height="{{i.sizes.full.height}}" width="{{i.sizes.full.width}}"/>
+           </a>
+        </div>
+        <h1>{{i.title}}</h1>
+        <h2>{{i.caption}}</h2>
+        <div>{{i.description}}</div>
+    </div>
+</article>
