@@ -1,6 +1,6 @@
 {
   "name": "prototype",
-  "version": "0.0.6",
+  "version": "0.0.6-1",
   "dependencies": {
   	"jQuery": "latest",
     "angular": "1.2.15",
