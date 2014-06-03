@@ -20,6 +20,10 @@ angular
         templateUrl: 'views/exmaple-releases.html',
         controller: 'ExmapleReleasesCtrl'
       })
+      .when('/_related/:type/:id', {
+        templateUrl: 'views/_related.html',
+        controller: 'RelatedCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -36,4 +40,15 @@ angular
             return response;
             //return extractedResponse;
         });
-    });
+    })
+    .run(['$location', 'CacheService', '$rootScope', function($location, CacheService, $rootScope){
+        window.$location = $location;
+        window.showRelated = function(post){
+            CacheService.put('post', post);
+            console.log(post);
+            $rootScope.$apply(function() {
+               $location.path("/_related");
+               console.log($location.path());
+            });            
+        }
+    }]);
