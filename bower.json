@@ -1,6 +1,6 @@
 {
   "name": "prototype",
-  "version": "0.0.0",
+  "version": "0.0.6-7",
   "dependencies": {
   	"jQuery": "latest",
     "angular": "1.2.15",
@@ -12,7 +12,8 @@
     "angular-sanitize": "1.2.15",
     "angular-route": "1.2.15",
     "nt-youtube": "git@github.com:josephniet/angular-youtube.git",
-    "restangular" : "latest"
+    "restangular" : "latest",
+    "normalize-css" : "latest"
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",
