@@ -27,7 +27,8 @@ module.exports = function (grunt) {
     
     recess: {
         options: {
-            compile: true
+            compile: true,
+            compress : true
         },
         dist: {
             files: [{
@@ -41,16 +42,16 @@ module.exports = function (grunt) {
     }, 
     bump: {
         options: {
-          files: ['package.json'],
+          files: ['package.json', 'bower.json'],
           updateConfigs: [],
           commit: true,
           commitMessage: 'Release v%VERSION%',
-          commitFiles: ['package.json'],
+          commitFiles: ['package.json', 'bower.json'],
           createTag: true,
           tagName: 'v%VERSION%',
           tagMessage: 'Version %VERSION%',
           push: true,
-          pushTo: 'upstream',
+          pushTo: 'origin',
           gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
         }
     },  
@@ -291,47 +292,35 @@ module.exports = function (grunt) {
     },
 
     // Copies remaining files to places other tasks can use
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'partials/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }]
+
+      copy: { dist: { files:[{
+            expand : true,
+            dot : true,
+            cwd : '<%= yeoman.app %>',
+            dest : '<%= yeoman.dist %>',
+            src : ['*.{ico,png,txt}', '.htaccess', '*.html', 'views/{,*/}*.html', 'partials/{,*/}*.html', 'images/{,*/}*.{webp}', 'fonts/*']
+          }, {
+            expand : true,
+            cwd : '.tmp/images',
+            dest : '<%= yeoman.dist %>/images',
+            src : ['generated/*']
+          }, {
+            expand : true,
+            cwd : '.tmp/styles',
+            dest : '<%= yeoman.dist %>/styles',
+            src : '{,*/}*.css'
+          }]
+        }
       },
-      styles: {
-        expand: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
-      }
-    },
+
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
       ],
       test: [
-        'copy:styles'
       ],
       dist: [
-        'copy:styles',
         'imagemin',
         'svgmin'
       ]
@@ -410,14 +399,15 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'ngmin',
-    'copy:dist',
     'recess',
+    'copy:dist',
     'cdnify',
     'cssmin',
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'bump:build'
   ]);
 
   grunt.registerTask('default', [
