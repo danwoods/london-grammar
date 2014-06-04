@@ -13,7 +13,9 @@
     "angular-route": "1.3.0-beta.10",
     "nt-youtube": "git@github.com:josephniet/angular-youtube.git",
     "restangular" : "latest",
-    "normalize-css" : "latest"
+    "normalize-css" : "latest",
+    "webcam-directive" : "latest"
+    
   },
   "devDependencies": {
     "angular-mocks": "1.3.0-beta.10",
