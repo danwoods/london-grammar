@@ -22,7 +22,8 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
+      dist: 'dist',
+      name: require('./bower.json').name || 'App'
     },
     
     recess: {
@@ -95,18 +96,7 @@ module.exports = function (grunt) {
         ]
       }
     },
-    
-    ngtemplates:    {
-        //module : '',
-          prototypeApp:          {
-            cwd: '<%= yeoman.app %>',
-            src:        ['views/{,*/}*.html', 'partials/{,*/}*.html'],
-            dest:       '<%= yeoman.app %>/scripts/templates.js',
-            options:    {
-              htmlmin:  '<%= htmlmin.dist %>'
-            }
-          }
-        },    
+      
 
     // The actual grunt server settings
     connect: {
@@ -275,7 +265,7 @@ module.exports = function (grunt) {
           collapseWhitespace: true,
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeOptionalTags: true         
         },
         files: [{
           expand: true,
@@ -285,7 +275,18 @@ module.exports = function (grunt) {
         }]
       }
     },
-
+    
+    ngtemplates: {
+      app : {
+        cwd: '<%= yeoman.app %>',
+        src:        ['views/{,*/}*.html', 'partials/{,*/}*.html'],
+        dest:       '<%= yeoman.app %>/scripts/templates.js',
+        options:    {
+          module: '<%= yeoman.name %>App',
+          htmlmin:  '<%= htmlmin.dist.options %>'
+        }           
+      }
+    },  
     // ngmin tries to make the code safe for minification automatically by
     // using the Angular long form for dependency injection. It doesn't work on
     // things like resolve or inject so those have to be done manually.
