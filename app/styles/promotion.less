@@ -1,15 +1,31 @@
+
+.promotion.big {
+  .promotion-inner {
+    height:45rem;
+  }
+  .text-stuff {
+    top:auto;
+    height:50%;
+  }
+}
+
+.promotion.lyric {
+  .content {
+    font-size:1.4em;
+    line-height:1.5em;
+  }
+}
 .promotion {
   overflow:hidden;
   .text-stuff {
+    text-align:center;
     position:absolute;
     height:100%;
-    width:29em;
-    font-size:0.9em;
+    width:100%;
     right:0;
+    left:0;
     top:0;
     bottom:0;
-    left:auto;
-    background:fade(white, 20%);
     color:white;
     display:block;
     margin:0;
@@ -35,15 +51,15 @@
    z-index:-1; 
   }
   .promotion-inner {
-    height:21rem;
+    height:35rem;
     position:relative;
     .background-size(cover);
     .title {
-      .knockout;
+      display:none;
       font-size:2.3em;
       color:white;
       margin: -0.1em 0 0.25em 0;//negative margin cuz shitty font. :(
-      text-align:left;
+      text-align:inherit
     }
   }
   .button {

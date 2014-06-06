@@ -12,7 +12,7 @@ angular.module('prototypeApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('views/main.html',
-    "<h1>{{page.title}}</h1><div class=\"content\" ng-bind-html=\"page.content\"></div><section class=\"promotions\"><promotion ng-repeat=\"p in page.promotions\" promotion=\"p\"></promotion></section><section class=\"videos\"><article class=\"video\" ng-repeat=\"v in videos\"><youtube yt-id=\"v.youtube_object.id\"></youtube><h1>{{v.title}}</h1></article></section><section class=\"photos\"><photo-excerpt class=\"flexibox\" ng-repeat=\"i in images\" image=\"i\"></photo-excerpt></section><section class=\"albums\"><ng-include src=\"'partials/album_full.html'\" ng-repeat=\"a in albums\"></ng-include></section><section class=\"news\"><ng-include src=\"'partials/blog_full.html'\" ng-repeat=\"b in news\"></ng-include></section><section class=\"contact\"><ng-include ng-repeat=\"page in contactPage\" src=\"'views/page.html'\"></ng-include></section>"
+    "<section class=\"top-promotion\"><promotion class=\"big\" promotion=\"page.promotions[0]\"></promotion></section><section class=\"videos section\"><h2 class=\"section-title\">Videos</h2><carousel><slide ng-repeat=\"videos in video_chunks\" class=\"slide\"><article class=\"video flexibox\" ng-repeat=\"v in videos\"><ng-include src=\"'partials/video_excerpt.html'\"></ng-include></article></slide></carousel></section><promotion class=\"lyric\" promotion=\"page.promotions[1]\"></promotion><section class=\"tour section\"><h2 class=\"section-title\">Live</h2><div style=\"height:500px;background:grey;max-width:650px; margin:0 auto\"></div></section><promotion class=\"lyric\" promotion=\"page.promotions[2]\"></promotion><section class=\"albums section\"><h2 class=\"section-title\">Music</h2><carousel><slide ng-repeat=\"albums in album_chunks\" class=\"slide\"><ng-include src=\"'partials/album_full.html'\" ng-repeat=\"a in albums\"></ng-include></slide></carousel></section><promotion class=\"lyric\" promotion=\"page.promotions[3]\"></promotion><section class=\"photos section\"><h2 class=\"section-title\">Photos</h2><carousel><slide ng-repeat=\"images in image_chunks\" class=\"slide\"><photo-excerpt class=\"flexibox\" ng-repeat=\"i in images\" image=\"i\"></photo-excerpt></slide></carousel></section><promotion class=\"lyric\" promotion=\"page.promotions[4]\"></promotion><section class=\"sign-up section\"><h2 class=\"section-title\">Sign up</h2><ng-include ng-repeat=\"page in contactPage\" src=\"'views/page.html'\"></ng-include></section>"
   );
 
 
@@ -21,8 +21,13 @@ angular.module('prototypeApp').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('views/video.html',
+    "<p>This is the video view.</p><div class=\"close\" ng-click=\"close()\"><i class=\"fa fa-times\"></i></div><ng-include src=\"'partials/video_full.html'\"></ng-include>"
+  );
+
+
   $templateCache.put('partials/album_full.html',
-    "<article class=\"album full\"><div class=\"album-inner\"><div class=\"media-container\"><img src=\"{{a.image.sizes.medium.url}}\" width=\"{{a.image.sizes.medium.width}}\" height=\"{{a.image.sizes.medium.height}}\" alt=\"{{a.image.alt}}\"></div><h2 class=\"title\">{{a.title}}</h2><h3 class=\"subtitle date release-date\">{{ a.date | time }}</h3><div class=\"content\" ng-bind-html=\"a.conten\"></div><div class=\"tracklist\"><div ng-repeat=\"t in a.tracklisting\" class=\"track excerpt\"><div class=\"track-inner\"><div class=\"track-header\"><span class=\"track-number\">{{$index}}</span><span class=\"track-title\">{{t.title}}</span></div><div class=\"extra-information\" ng-show=\"state\"><div class=\"lyrics\" ng-bind-html=\"t.lyrics\"></div></div></div></div></div><div class=\"product-links\"><div class=\"row\" ng-repeat=\"l in a.links\"><i class=\"fa fa-{{l.link_type}}\"></i> <a ng-href=\"{{l.link_url}}\" target=\"{{l.link_target}}\">{{l.link_text}}</a></div></div></div></article>"
+    "<article class=\"album full flexibox\"><div class=\"album-inner\"><div class=\"media-container\"><img src=\"{{a.image.sizes.medium.url}}\" width=\"{{a.image.sizes.medium.width}}\" height=\"{{a.image.sizes.medium.height}}\" alt=\"{{a.image.alt}}\"></div><h2 class=\"title\">{{a.title}}</h2><h3 class=\"subtitle date release-date\">{{ a.date | time }}</h3><div class=\"content\" ng-bind-html=\"a.conten\"></div><div class=\"tracklist\"><div ng-repeat=\"t in a.tracklisting\" class=\"track excerpt\"><div class=\"track-inner\"><div class=\"track-header\"><span class=\"track-number\">{{$index}}</span><span class=\"track-title\">{{t.title}}</span></div><div class=\"extra-information\" ng-show=\"state\"><div class=\"lyrics\" ng-bind-html=\"t.lyrics\"></div></div></div></div></div><div class=\"product-links\"><div class=\"row\" ng-repeat=\"l in a.links\"><i class=\"fa fa-{{l.link_type}}\"></i> <a ng-href=\"{{l.link_url}}\" target=\"{{l.link_target}}\">{{l.link_text}}</a></div></div></div></article>"
   );
 
 
@@ -37,12 +42,12 @@ angular.module('prototypeApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('partials/photo_excerpt.html',
-    "<article class=\"photo\"><div class=\"photo-inner\"><div class=\"image-container\"><a ng-href=\"{{i.url}}\" target=\"_blank\"><img ng-src=\"{{i.sizes.thumbnail.url}}\" alt=\"{{i.alt}}\" title=\"{{i.title}}\" height=\"{{i.sizes.thumbnail.height}}\" width=\"{{i.sizes.thumbnail.width}}\"><div class=\"meta overlay\"><div class=\"meta-inner\"><h4 ng-if=\"i.title\" class=\"title\">{{i.title}}</h4><div ng-if=\"i.caption\" class=\"caption\">{{i.caption}}</div><div ng-if=\"i.description\" class=\"description content\" ng-bind-html=\"i.description\"></div></div></div></a></div></div></article>"
+    "<article class=\"photo excerpt\"><div class=\"photo-inner\"><div class=\"image-container\"><a ng-href=\"{{i.url}}\" target=\"_blank\"><img ng-src=\"{{i.sizes.thumbnail.url}}\" alt=\"{{i.alt}}\" title=\"{{i.title}}\" height=\"{{i.sizes.thumbnail.height}}\" width=\"{{i.sizes.thumbnail.width}}\"><div class=\"meta overlay\"><div class=\"meta-inner centerer\"><div class=\"center\"><h4 ng-if=\"i.title\" class=\"title\">{{i.title}}</h4><div ng-if=\"i.caption\" class=\"caption\">{{i.caption}}</div><div ng-if=\"i.description\" class=\"description content\" ng-bind-html=\"i.description\"></div></div></div></div></a></div></div></article>"
   );
 
 
   $templateCache.put('partials/photo_full.html',
-    "<article class=\"photo\"><div class=\"photo-inner\"><div class=\"image-container\"><a ng-href=\"{{i.url}}\" target=\"_blank\"><img ng-src=\"{{i.sizes.full.url}}\" alt=\"{{i.alt}}\" title=\"{{i.title}}\" height=\"{{i.sizes.full.height}}\" width=\"{{i.sizes.full.width}}\"></a></div><h1>{{i.title}}</h1><h2>{{i.caption}}</h2><div>{{i.description}}</div></div></article>"
+    "<article class=\"photo\"><div class=\"photo-inner\"><div class=\"image-container\"><a ng-href=\"{{i.url}}\" target=\"_blank\"><img ng-src=\"{{i.sizes.thumbnail.url}}\" alt=\"{{i.alt}}\" title=\"{{i.title}}\" height=\"{{i.sizes.thumbnail.height}}\" width=\"{{i.sizes.thumbnail.width}}\"><div class=\"meta overlay\"><div class=\"meta-inner\"><h4 ng-if=\"i.title\" class=\"title\">{{i.title}}</h4><div ng-if=\"i.caption\" class=\"caption\">{{i.caption}}</div><div ng-if=\"i.description\" class=\"description content\" ng-bind-html=\"i.description\"></div></div></div></a></div></div></article>"
   );
 
 
@@ -57,7 +62,7 @@ angular.module('prototypeApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('partials/promotion.html',
-    "<article class=\"promotion\"><div class=\"promotion-inner\"><a ng-if=\"p.promo_target != '_self'\" class=\"link-overlay\" ng-href=\"{{p.promo_link}}\" target=\"_blank\"></a> <a ng-if=\"p.promo_target == '_self'\" class=\"link-overlay\" ng-href=\"{{p.promo_link}}\"></a><div class=\"promotion-media\"><div ng-if=\"p.video_background\"><youtube-background yt-id=\"p.video_background.youtube_object.id\"></youtube-background></div><div ng-if=\"!p.video_background\"><div class=\"promo-img\" style=\"background-image:url({{p.image.sizes.full.url}})\"></div></div></div><div ng-if=\"p.title || p.content\" class=\"text-stuff\"><div class=\"text-stuff-center-container\"><div class=\"text-stuff-center\"><h1 class=\"title\">{{p.title}}</h1><div class=\"content\" ng-bind-html=\"p.content\"></div><div class=\"button promotion-button\">{{p.promo_text}}</div></div></div></div></div></article>"
+    "<article class=\"promotion skrollr-promo\"><div class=\"promotion-inner\"><a ng-if=\"p.promo_target != '_self'\" class=\"link-overlay\" ng-href=\"{{p.promo_link}}\" target=\"_blank\"></a> <a ng-if=\"p.promo_target == '_self'\" class=\"link-overlay\" ng-href=\"{{p.promo_link}}\"></a><div class=\"promotion-media\"><div ng-if=\"p.video_background\"><youtube-background yt-id=\"p.video_background.youtube_object.id\"></youtube-background></div><div ng-if=\"!p.video_background\"><div class=\"promo-img skrollr-bg\" style=\"background-image:url({{p.image.sizes.full.url}})\"></div></div></div><div ng-if=\"p.title || p.content\" class=\"text-stuff\"><div class=\"text-stuff-center-container\"><div class=\"text-stuff-center\"><h1 class=\"title\">{{p.title}}</h1><div class=\"content\" ng-bind-html=\"p.content\"></div><div class=\"button promotion-button\">{{p.promo_text}}</div></div></div></div></div></article>"
   );
 
 
@@ -76,6 +81,11 @@ angular.module('prototypeApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('partials/video_excerpt.html',
+    "<article class=\"video excerpt\"><a class=\"image-container\" ng-href=\"#/video/{{v.slug}}\"><img class=\"preview-image\" ng-src=\"{{v.youtube_object.snippet.thumbnails.medium.url}}\" width=\"{{v.youtube_object.snippet.thumbnails.medium.width}}\" height=\"{{v.youtube_object.snippet.thumbnails.medium.height}}\" alt=\"{{v.youtube_object.snipper.title}}\"></a><h4>{{v.title}}</h4></article>"
+  );
+
+
+  $templateCache.put('partials/video_full.html',
     "<article class=\"video\"><youtube yt-id=\"v.youtube_object.id\"></youtube><h1>{{v.title}}</h1></article>"
   );
 

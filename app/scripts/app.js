@@ -8,7 +8,8 @@ angular
     'ngRoute',
     'restangular',
     'services.config',
-    'nt-youtube'
+    'nt-youtube',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -23,6 +24,10 @@ angular
       .when('/_related/:type/:id', {
         templateUrl: 'views/_related.html',
         controller: 'RelatedCtrl'
+      })
+      .when('/video/:slug', {
+        templateUrl: 'views/video.html',
+        controller: 'VideoCtrl'
       })
       .otherwise({
         redirectTo: '/'
