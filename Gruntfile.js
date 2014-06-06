@@ -79,18 +79,34 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
-      },
+      },      
+      html: {
+        files: ['<%= yeoman.app %>/partials/{,*/}*.html', '<%= yeoman.app %>/index.html', '<%= yeoman.app %>/views/{,*/}*.html'],
+        tasks: ['ngtemplates']
+      },      
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
+          //'<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
+    
+    ngtemplates:    {
+        //module : '',
+          prototypeApp:          {
+            cwd: '<%= yeoman.app %>',
+            src:        ['views/{,*/}*.html', 'partials/{,*/}*.html'],
+            dest:       '<%= yeoman.app %>/scripts/templates.js',
+            options:    {
+              htmlmin:  '<%= htmlmin.dist %>'
+            }
+          }
+        },    
 
     // The actual grunt server settings
     connect: {
@@ -395,6 +411,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'bowerInstall',
     'useminPrepare',
+    'ngtemplates',
     'concurrent:dist',
     'autoprefixer',
     'concat',
