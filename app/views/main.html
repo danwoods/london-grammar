@@ -17,7 +17,7 @@
 
 <section class="tour  section">
     <h2 class="section-title">Live</h2>
-    <div style="height:500px;background:grey;max-width:650px; margin:0 auto;"></div>
+    <ng-include src="'views/tour.html'"></ng-include>
 </section>
 
 <promotion class="lyric" promotion="page.promotions[2]"></promotion>
@@ -43,7 +43,6 @@
 
 <promotion class="lyric" promotion="page.promotions[4]"></promotion>
 
-<section class="sign-up section">
-    <h2 class="section-title">Sign up</h2>
-    <ng-include ng-repeat="page in contactPage" src="'views/page.html'"></ng-include>
+<section class="sign-up section SignUpCtrl">
+    <ng-include src="'views/sign-up.html'" ng-controller="SignUpCtrl"></ng-include>
 </section>

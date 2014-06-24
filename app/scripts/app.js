@@ -48,7 +48,7 @@ angular
             //var extractedResponse;
             return response;
             //return extractedResponse;
-        });
+        });    
     })
     .run(['$location', 'CacheService', '$rootScope', 'Restangular', function($location, CacheService, $rootScope, Restangular){
         window.$location = $location;
@@ -60,6 +60,13 @@ angular
                console.log($location.path());
             });            
         };
+        $rootScope.$on('$routeChangeSuccess', function(ev, data){
+          if (data.$$route){
+                $rootScope.currentController = data.$$route.controller;
+          }
+        });
+        
+        //bootstrap data.        
         Restangular.one('menu/').get({
         }).then(function(response){
           $rootScope.menus = response.data;
