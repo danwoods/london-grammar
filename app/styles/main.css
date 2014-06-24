@@ -24,7 +24,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: #484848;
   line-height: 1em;
 }
 h1 {
@@ -128,7 +127,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -551,6 +550,68 @@ article.video {
 .photo.excerpt .meta .meta-inner {
   padding: 1em;
   text-align: center;
+}
+.header {
+  background: black;
+  color: white;
+}
+.social-nav {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.social-nav li {
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.25em;
+}
+.social-nav li:first-of-type {
+  margin-left: 0;
+}
+.social-nav li .fa {
+  font-size: 1.2em;
+}
+.menu-trigger {
+  font-weight: 100;
+  font-size: 1.5em;
+}
+.header {
+  position: relative;
+}
+.header .header-inner {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.header .header-inner .menu-trigger,
+.header .header-inner .logo,
+.header .header-inner .social-nav {
+  vertical-align: middle;
+}
+.header .header-inner,
+.header .menu-overlay {
+  padding: 0.25em 1em;
+}
+.header .menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: black;
 }
 body {
   background: #aaa;

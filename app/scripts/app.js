@@ -46,7 +46,7 @@ angular
             //return extractedResponse;
         });
     })
-    .run(['$location', 'CacheService', '$rootScope', function($location, CacheService, $rootScope){
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', function($location, CacheService, $rootScope, Restangular){
         window.$location = $location;
         window.showRelated = function(post){
             CacheService.put('post', post);
@@ -55,5 +55,9 @@ angular
                $location.path("/_related");
                console.log($location.path());
             });            
-        }
+        };
+        Restangular.one('menu/').get({
+        }).then(function(response){
+          $rootScope.menus = response.data;
+        });
     }]);

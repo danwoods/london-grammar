@@ -27,12 +27,22 @@
     <header class="header">
         <div class="header-inner">
             <ul class="social-nav">
-              <li class="social-item {{n.css}}" ng-repeat="n in social">
+              <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
                 <a href="{{n.url}}">
-                  <i class="fa fa-{{n.css}}"></i>
+                  <i class="fa" ng-class="n.css"></i>
                 </a>
               </li>
             </ul>
+            <div class="logo">
+              <img src="images/logo.png" />
+            </div>
+            <h1 class="menu-trigger" ng-click="showMenu = 1">Menu</h1>
+        </div>
+        <div class="menu-overlay" ng-show="showMenu">
+          <div class="close" ng-click="showMenu = 0">
+            <i class="fa fa-times"></i>
+          </div>
+          hi :P
         </div>
     </header>
     <div class="wrapper">
