@@ -1,0 +1,57 @@
+.header {
+  background:black;
+  color:white;
+}
+.social-nav {
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  list-style:none;
+  li {
+    display:inline-block;
+    margin:0.25em;
+    padding:0.25em;
+    &:first-of-type {
+      margin-left:0;
+    }
+    .fa {
+      font-size:1.2em;
+    }
+  }
+}
+
+.menu-trigger {
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+.logo {
+  
+}
+
+.header {
+  position:relative;
+  .header-inner {
+    position:relative;
+    .flex-display;
+    .justify-content( space-between );
+    .align-items (center);
+    .menu-trigger, .logo, .social-nav {
+      vertical-align:middle;
+    }
+  }
+  .header-inner, .menu-overlay {
+    padding:0.25em 1em;
+  }
+  .menu-overlay {
+    position:absolute;
+    .fill;
+    background:black;
+    .close {
+      
+    }
+    .main-menu {
+      
+    }
+  }
+}
