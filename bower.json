@@ -1,22 +1,26 @@
 {
-  "name": "prototype",
-  "version": "0.0.6-7",
+  "name": "lg",
+  "version": "0.0.0",
   "dependencies": {
-  	"jQuery": "latest",
-    "angular": "1.2.15",
+    "angular": "1.2.16",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "angular-resource": "1.2.16",
+    "angular-cookies": "1.2.16",
+    "angular-sanitize": "1.2.16",
+    "angular-animate": "1.2.16",
+    "angular-touch": "1.2.16",
+    "angular-route": "1.2.16",
     "momentjs": "latest",
-    "json3": "~3.2.6",
-    "es5-shim": "~2.1.0",
-    "angular-resource": "1.2.15",
-    "angular-cookies": "1.2.15",
-    "angular-sanitize": "1.2.15",
-    "angular-route": "1.2.15",
+    "jQuery": "latest",    
     "nt-youtube": "git@github.com:josephniet/angular-youtube.git",
     "restangular" : "latest",
-    "normalize-css" : "latest"
+    "normalize-css" : "latest",
+    "angular-bootstrap" : "latest"    
   },
   "devDependencies": {
-    "angular-mocks": "1.2.15",
-    "angular-scenario": "1.2.15"
-  }
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
+  },
+  "appPath": "app"
 }

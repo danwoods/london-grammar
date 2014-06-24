@@ -89,21 +89,12 @@ img {
     } 
 
 .wrapper {
-  max-width:1100px;
+  //max-width:1100px;
   margin:0 auto;
   position:relative;
   overflow:hidden;
 }
 
-
-.button.stripe {
-  background-image:url('../images/stripe.png');
-  border:1px solid transparent;
-  &:hover {
-    background-color:rgba(255,255,255,0.3);
-    border:1px solid;
-  }
-}
 
 .button {
   padding:0.1em 0.5em 0.2em 0.5em;
@@ -118,25 +109,6 @@ img {
   clear:both;display:block;
 }
 
-.section {
-  &.top {
-    padding-top:0;
-    .section-divider.top {
-      display:none;
-    }
-  }
-  margin:0 -2em;
-  position:relative;
-  padding:2em;
-  &:nth-of-type(odd){
-    background-color:#ebebeb;
-  }
-}
-
-.section-title {
-  margin-top:0;
-  margin-bottom: 0.4em;
-}
 .section-subtitle {
   margin-top: -1rem;
   text-align: center;
@@ -321,6 +293,15 @@ img {
   }
 }
 
+.centerer {
+  display:table;
+  .fill;
+  .center {
+    display:table-cell;
+    vertical-align:middle;
+  }
+}
+
 .blocker {
   .blocker2;
   top:0;
@@ -354,42 +335,14 @@ img {
   text-align:center;
 }
 
-.carousel, .recipes-container-outer {
-    .carousel-indicators {
-      display:none;
-    }
-    position:relative;
-    .r-arrow {
-      font-size:1.7em;
-      position:absolute;
-      top:50%;
-      margin-top:-1em;
-      cursor:pointer;
-      z-index:9999;
-      .transition(1s all ease);
-      &:hover {
-        color:@orange;
-      }
-      &.next {
-        right:-2.5rem;
-        padding-left: 1.2em;
-      }
-      &.prev {
-        left:-2.5rem;
-        padding-left: 0.1em;
-      }
-      //background: red;
-      width: 2em;
-      height: 2em;
-      line-height: 2em;
-    } 
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px)  { 
-        .r-arrow {
-          //font-size:2.5em;
-        }      
-       }
+.carousel-controls {
+  position:relative;
+  text-align: center;
+}
+.carousel {
+  .r-arrow {
+    display:inline-block;
+  }
 }
 
 .seo-kludge {//FIXME: this is a horrible kludge to get addThis pinterest image share working.
@@ -448,7 +401,14 @@ img {
   }
 }
 
-
+.fill {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:5;
+}
 
 
 //temp;

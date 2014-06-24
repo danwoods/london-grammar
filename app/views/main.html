@@ -1,28 +1,49 @@
-<h1>{{page.title}}</h1>
-<div class="content" ng-bind-html="page.content"></div>
-<section class="promotions">
-    <promotion ng-repeat="p in page.promotions" promotion="p"></promotion>
+<section class="top-promotion">
+     <promotion class="big" promotion="page.promotions[0]"></promotion>
 </section>
 
-<section class="videos">
-    <article class="video" ng-repeat="v in videos">
-        <youtube yt-id="v.youtube_object.id"></youtube>
-        <h1>{{v.title}}</h1>
-    </article>
+<section class="videos section">
+    <h2 class="section-title">Videos</h2>
+    <carousel>
+        <slide ng-repeat="videos in video_chunks" class="slide">
+            <article class="video flexibox" ng-repeat="v in videos" >
+                <ng-include src="'partials/video_excerpt.html'"></ng-include>
+            </article>
+        </slide>
+    </carousel>
+</section>
+<promotion class="lyric" promotion="page.promotions[1]"></promotion>
+
+
+<section class="tour  section">
+    <h2 class="section-title">Live</h2>
+    <div style="height:500px;background:grey;max-width:650px; margin:0 auto;"></div>
 </section>
 
-<section class="photos">
-	<photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
+<promotion class="lyric" promotion="page.promotions[2]"></promotion>
+
+<section class="albums section">
+    <h2 class="section-title">Music</h2>
+    <carousel>
+        <slide ng-repeat="albums in album_chunks" class="slide">
+                <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
+        </slide>
+    </carousel>
+</section>
+<promotion class="lyric" promotion="page.promotions[3]"></promotion>
+
+<section class="photos section">
+    <h2 class="section-title">Photos</h2>
+    <carousel>
+        <slide ng-repeat="images in image_chunks" class="slide">
+            <photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
+        </slide>
+    </carousel>
 </section>
 
-<section class="albums">
-    <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
-</section>
+<promotion class="lyric" promotion="page.promotions[4]"></promotion>
 
-<section class="news">
-    <ng-include src="'partials/blog_full.html'" ng-repeat="b in news"></ng-include>
-</section>
-
-<section class="contact">
+<section class="sign-up section">
+    <h2 class="section-title">Sign up</h2>
     <ng-include ng-repeat="page in contactPage" src="'views/page.html'"></ng-include>
 </section>

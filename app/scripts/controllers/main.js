@@ -1,7 +1,34 @@
 'use strict';
 
 angular.module('prototypeApp')
-  .controller('MainCtrl', ['$scope', 'Restangular',  function ($scope, Restangular) {
+  .controller('MainCtrl', ['$scope', 'Restangular', '$timeout',  function ($scope, Restangular, $timeout) {
+    
+
+    function getIncrement(multiplier) {
+        var increment, multiplier = multiplier || 1,
+        width = $(window).width();
+        if (width > 700 && width < 800){//FIXME: we should really have a service or something to handle all this responsive shit.
+           increment = 3; 
+        }
+        else if (width > 800) {
+            increment = 4;
+        } else {
+            increment = 2;
+        }
+        return increment * multiplier;        
+    }
+    
+    function breakIt(data, multiplier) {
+        var i, j, arr, all = [], n = getIncrement(multiplier);
+        if (data.length){
+            for ( i = 0, j = data.length; i < j; i += n) {
+                arr = data.slice(i, i + n);
+                all.push(arr);
+            }
+        }
+        return all;
+    }
+          
         Restangular.one('page/').get({
             slug : 'home',
             meta : 1,
@@ -14,12 +41,14 @@ angular.module('prototypeApp')
         Restangular.one('video/').get({
         }).then(function(response) {
             $scope.videos = response.data;
+            $scope.video_chunks = breakIt($scope.videos);
             console.log('vids', response.data);
         });
         
         Restangular.one('image/').get({
         }).then(function(response) {
             $scope.images = response.data;
+            $scope.image_chunks = breakIt($scope.images);
             console.log('imgs', response.data);
         });        
         
@@ -32,6 +61,7 @@ angular.module('prototypeApp')
         Restangular.one('album/').get({
         }).then(function(response) {
             $scope.albums = response.data;
+            $scope.album_chunks = breakIt($scope.albums);
             console.log('albums', response.data);
         });
         
@@ -40,5 +70,11 @@ angular.module('prototypeApp')
         }).then(function(response){
             $scope.contactPage = [response.data];
             console.log('contact', response.data);
-        }) 
+        });
+        
+        
+        $timeout(function(){
+            var s = skrollr.init();
+        }, 4000);
+        
   }]);
