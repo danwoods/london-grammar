@@ -128,7 +128,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
   }
 }
 @media all and (min-width: 800px) {
@@ -413,6 +413,47 @@ article.video {
 }
 .promotion {
   overflow: hidden;
+  /*@media all and (max-width:780px){
+    .promo-img {
+      display:block;
+    }
+    .promotion-inner {
+      height:auto;
+      .title {
+        font-size: 1.7em;
+      }
+    }
+    .text-stuff {
+      font-size:1em;
+      width:100%;
+      position:relative;
+    }
+    .text-stuff .text-stuff-center-container {
+      position:relative;
+      min-height: 12rem;
+      display:block;
+      .text-stuff-center {
+        .content {
+          p {
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+          }
+        }
+        display:block;
+        padding-bottom:4rem;
+        .button {
+          font-size: 1.7em;
+          margin:0;
+          position:absolute;
+          bottom:0;
+          background:grey;
+          left:0;
+          width:100%;
+        }
+      }
+    }
+  }  */
 }
 .promotion .text-stuff {
   text-align: center;
@@ -474,45 +515,6 @@ article.video {
   -webkit-background-size: cover;
   background-size: cover;
 }
-@media all and (max-width: 780px) {
-  .promotion .promo-img {
-    display: block;
-  }
-  .promotion .promotion-inner {
-    height: auto;
-  }
-  .promotion .promotion-inner .title {
-    font-size: 1.7em;
-  }
-  .promotion .text-stuff {
-    font-size: 1em;
-    width: 100%;
-    position: relative;
-  }
-  .promotion .text-stuff .text-stuff-center-container {
-    position: relative;
-    min-height: 12rem;
-    display: block;
-  }
-  .promotion .text-stuff .text-stuff-center-container .text-stuff-center {
-    display: block;
-    padding-bottom: 4rem;
-  }
-  .promotion .text-stuff .text-stuff-center-container .text-stuff-center .content p {
-    padding: 0;
-    margin: 0;
-    font-size: 0.9em;
-  }
-  .promotion .text-stuff .text-stuff-center-container .text-stuff-center .button {
-    font-size: 1.7em;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    background: grey;
-    left: 0;
-    width: 100%;
-  }
-}
 .track .track-number {
   margin-right: 0.5em;
 }
@@ -551,7 +553,7 @@ article.video {
   text-align: center;
 }
 body {
-  background: #ccc;
+  background: #aaa;
   font-family: 'BT Futura W01', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
