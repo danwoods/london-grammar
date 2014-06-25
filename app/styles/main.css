@@ -127,7 +127,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -559,6 +559,11 @@ article.video {
 .photo .photo-inner .meta .caption {
   margin: 0.5em 0;
 }
+.photo.full img {
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
 .photo.excerpt .photo-inner:hover .meta {
   opacity: 1;
 }
@@ -653,13 +658,14 @@ article.video {
   padding-bottom: 4px;
   text-transform: none;
 }
+.SignUpCtrl form {
+  max-width: 650px;
+}
 /* MailChimp Form Embed Code - Classic - 08/17/2011 */
 #mc_embed_signup form {
   display: block;
   position: relative;
   text-align: left;
-  padding: 10px 0 10px 3%;
-  width: 30%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -716,7 +722,7 @@ article.video {
 #mc_embed_signup .mc-field-group {
   clear: left;
   position: relative;
-  width: 96%;
+  width: 100%;
   padding-bottom: 3%;
   min-height: 50px;
 }
@@ -857,7 +863,7 @@ article.video {
   font-weight: bold;
 }
 body {
-  background: #aaa;
+  background: #fff;
   font-family: 'BT Futura W01', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;

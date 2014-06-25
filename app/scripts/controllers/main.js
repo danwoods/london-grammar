@@ -75,6 +75,10 @@ angular.module('prototypeApp')
         
         $timeout(function(){
             var s = skrollr.init();
+            window.skroll = s;
         }, 4000);
+        $scope.$on('$destroy', function(){
+          s.destroy();
+        });
         
   }]);

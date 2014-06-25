@@ -16,7 +16,8 @@
     "nt-youtube": "git@github.com:josephniet/angular-youtube.git",
     "restangular" : "latest",
     "normalize-css" : "latest",
-    "angular-bootstrap" : "latest"    
+    "angular-bootstrap" : "latest",
+    "imagesloaded" : "latest"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

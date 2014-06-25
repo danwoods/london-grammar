@@ -6,9 +6,8 @@
     <h2 class="section-title">Videos</h2>
     <carousel>
         <slide ng-repeat="videos in video_chunks" class="slide">
-            <article class="video flexibox" ng-repeat="v in videos" >
-                <ng-include src="'partials/video_excerpt.html'"></ng-include>
-            </article>
+           <video-excerpt class="video flexibox" ng-repeat="v in videos" video="v">
+          </video-excerpt>
         </slide>
     </carousel>
 </section>
