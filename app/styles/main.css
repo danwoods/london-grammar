@@ -615,6 +615,8 @@ article.video {
 }
 .sign-up h1 {
   color: red;
+  font-weight: 100;
+  font-size: 1.5em;
 }
 body {
   background: #aaa;

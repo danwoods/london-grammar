@@ -14,5 +14,5 @@ angular.module('prototypeApp')
       'AngularJS',
       'Karma'
     ];
-    $scope.test = 'this is a new test string.';
+    $scope.random = 'SIGN UP';
   });
