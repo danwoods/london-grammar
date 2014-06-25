@@ -333,6 +333,7 @@ h1.superbig {
 }
 .carousel .r-arrow {
   display: inline-block;
+  cursor: pointer;
 }
 .seo-kludge {
   display: block;
@@ -551,11 +552,19 @@ article.video {
 .VideosCtrl .close .fa {
   font-size: 1.5em;
 }
+.album .media-container img {
+  width: 100%;
+}
 .track .track-number {
   margin-right: 0.5em;
 }
 .product-links .link {
   display: block;
+}
+.product-links .row {
+  border: 1px solid black;
+  text-align: left;
+  padding: 0.5em;
 }
 .photo .photo-inner {
   margin: 0.5em;

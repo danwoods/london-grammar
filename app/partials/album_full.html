@@ -4,7 +4,7 @@
 			<img src="{{a.image.sizes.medium.url}}" width="{{a.image.sizes.medium.width}}" height="{{a.image.sizes.medium.height}}" alt="{{a.image.alt}}">
 		</div>		
 		<h2 class="title">{{a.title}}</h2>
-		<h3 class="subtitle date release-date">{{ a.date | time }}</h3>
+		<h3 class="subtitle date release-date">released {{ a.date | time }}</h3>
 		<div class="content" ng-bind-html="a.conten"></div>
 		<div class="tracklist">
 			<div ng-repeat="t in a.tracklisting" class="track excerpt">
