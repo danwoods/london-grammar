@@ -613,7 +613,7 @@ article.video {
   z-index: 5;
   background: black;
 }
-.sign-up h1 {
+.SignUpCtrl h2 {
   color: red;
   font-weight: 100;
   font-size: 1.5em;
