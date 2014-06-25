@@ -1,0 +1,12 @@
+<back></back>
+<carousel>
+  <slide ng-repeat="v in videos" active="slide.active">
+    <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="videos"></select-slide>
+    <ng-include src="'partials/video_full.html'"></ng-include>
+  </slide>
+</carousel>
+
+<!--
+  When videos are loaded, need to call method on the carousel to go to the right one.
+
+-->
