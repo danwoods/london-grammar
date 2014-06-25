@@ -33,6 +33,14 @@ angular
         templateUrl: 'views/sign-up.html',
         controller: 'SignUpCtrl'
       })
+      .when('/videos/:id?', {
+        templateUrl: 'views/videos.html',
+        controller: 'VideosCtrl'
+      })
+      .when('/photos/:id?', {
+        templateUrl: 'views/photos.html',
+        controller: 'PhotosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,5 +1,8 @@
 <article class="video excerpt">
-    <a class="image-container" ng-href="#/video/{{v.slug}}">
+    <a class="image-container" ng-href="#/videos/{{v.ID}}">
+        <div class="icon-overlay">
+          <i class="fa fa-play"></i>
+        </div>
         <img class="preview-image" ng-src="{{v.youtube_object.snippet.thumbnails.medium.url}}" width="{{v.youtube_object.snippet.thumbnails.medium.width}}" height="{{v.youtube_object.snippet.thumbnails.medium.height}}" alt="{{v.youtube_object.snipper.title}}"/>
     </a>
     <h4>{{v.title}}</h4>

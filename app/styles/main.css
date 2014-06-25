@@ -11,7 +11,7 @@ body {
   font-size: 14.5px;
   line-height: 1.2em;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: 100;
 }
 @media all and (max-width: 650px) {
   body {
@@ -25,6 +25,7 @@ h4,
 h5,
 h6 {
   line-height: 1em;
+  font-weight: inherit;
 }
 h1 {
   font-size: 2.8em;
@@ -48,7 +49,6 @@ h6 {
 h2,
 h3,
 h4 {
-  font-weight: 400;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -514,6 +514,31 @@ article.video {
   -webkit-background-size: cover;
   background-size: cover;
 }
+.video.excerpt a {
+  position: relative;
+  display: block;
+}
+.video.excerpt a .icon-overlay {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  font-size: 1.5em;
+  left: 50%;
+  color: white;
+  display: block;
+  border: 2px solid white;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.5em;
+  height: 2em;
+  width: 2em;
+  text-align: center;
+}
+.video.excerpt a .icon-overlay .fa {
+  line-height: 1em;
+  margin-left: 0.075em;
+}
 .track .track-number {
   margin-right: 0.5em;
 }
@@ -575,6 +600,7 @@ article.video {
 .menu-trigger {
   font-weight: 100;
   font-size: 1.5em;
+  cursor: pointer;
 }
 .header {
   position: relative;
