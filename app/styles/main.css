@@ -127,7 +127,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
   }
 }
 @media all and (min-width: 800px) {
@@ -394,7 +394,7 @@ h1.superbig {
 .blog.full,
 .album.full,
 article.video {
-  padding: 1.5em;
+  padding: 1.0em;
   margin: 1em 0;
 }
 .promotion.big .promotion-inner {
@@ -511,6 +511,12 @@ article.video {
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+.video.excerpt h4 {
+  color: #000;
+  font-size: 1em;
+  text-transform: capitalize;
+  text-align: left;
 }
 .video.excerpt a {
   position: relative;
