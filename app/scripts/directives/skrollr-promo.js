@@ -10,7 +10,7 @@ angular.module('prototypeApp')
                 text = element.find('.text-stuff');
                bg.attr({
                     "data-center" : "background-position: 0px 50%;",
-                    "data-bottom-top" : "background-position: 0px 40%;",
+                    "data-bottom-top" : "background-position: 0px 0%;",
                     "data-top-bottom" : "background-position: 0 50%;"
                 });
                 text.attr({

@@ -538,6 +538,9 @@ article.video {
   line-height: 1em;
   margin-left: 0.075em;
 }
+.video.excerpt .preview-image {
+  width: 100%;
+}
 .VideosCtrl .video.full {
   margin: 1em auto;
   max-width: 1400px;

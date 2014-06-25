@@ -85,7 +85,9 @@ angular.module('prototypeApp')
         
         
         $timeout(function(){
-            var s = skrollr.init();
+            var s = skrollr.init({
+              forceHeight : false
+            });
             window.skroll = s;
         }, 4000);
         $scope.$on('$destroy', function(){
