@@ -91,7 +91,9 @@ angular.module('prototypeApp')
             window.skroll = s;
         }, 4000);
         $scope.$on('$destroy', function(){
-          s.destroy();
+          if (s){
+            s.destroy();
+          }
         });
         
   }]);

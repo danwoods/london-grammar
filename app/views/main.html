@@ -3,45 +3,58 @@
 </section>
 
 <section class="videos section">
-    <h2 class="section-title">Videos</h2>
-    <carousel>
-        <slide ng-repeat="videos in video_chunks" class="slide">
-           <video-excerpt class="video flexibox" ng-repeat="v in videos" video="v">
-          </video-excerpt>
-        </slide>
-    </carousel>
+    <div class="content-wrapper">
+      <h2 class="section-title">Videos</h2>
+      <carousel>
+          <slide ng-if="!page.full_videos" ng-repeat="videos in video_chunks" class="slide">
+             <video-excerpt class="video flexibox" ng-repeat="v in videos" video="v">
+            </video-excerpt>
+          </slide>
+          <slide ng-if="page.full_videos" ng-repeat="v in videos">
+             <ng-include src="'partials/video_full.html'"></ng-include>
+          </slide>
+      </carousel>
+    </div>
 </section>
 <promotion class="lyric" promotion="page.promotions[1]"></promotion>
 
 
 <section class="tour  section">
+   <div class="content-wrapper">
     <h2 class="section-title">Live</h2>
     <ng-include src="'views/tour.html'"></ng-include>
+    </div>
 </section>
 
 <promotion class="lyric" promotion="page.promotions[2]"></promotion>
 
 <section class="albums section">
-    <h2 class="section-title">Music</h2>
-    <carousel>
-        <slide ng-repeat="albums in album_chunks" class="slide">
-                <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
-        </slide>
-    </carousel>
+    <div class="content-wrapper">
+      <h2 class="section-title">Music</h2>
+      <carousel>
+          <slide ng-repeat="albums in album_chunks" class="slide">
+                  <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
+          </slide>
+      </carousel>
+    </div>
 </section>
 <promotion class="lyric" promotion="page.promotions[3]"></promotion>
 
 <section class="photos section">
+   <div class="content-wrapper">
     <h2 class="section-title">Photos</h2>
     <carousel>
         <slide ng-repeat="images in image_chunks" class="slide">
             <photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
         </slide>
     </carousel>
+    </div>
 </section>
 
 <promotion class="lyric" promotion="page.promotions[4]"></promotion>
 
 <section class="sign-up section SignUpCtrl">
+   <div class="content-wrapper">
     <ng-include src="'views/sign-up.html'" ng-controller="SignUpCtrl"></ng-include>
+   </div>
 </section>
