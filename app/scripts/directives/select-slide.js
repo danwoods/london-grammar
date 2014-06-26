@@ -43,7 +43,8 @@ angular.module('prototypeApp')
             var newUrl = $location.path().replace($routeParams.id, getID() );
             $routeParams.id = getID();
             console.log(newUrl, $scope.slides[$scope.index], getID());
-            $location.path(newUrl, false);
+            //$location.path(newUrl);
+            $location.search('id', getID());
           }
         });
       }

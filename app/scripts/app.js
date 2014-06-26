@@ -35,7 +35,8 @@ angular
       })
       .when('/videos/:id?', {
         templateUrl: 'views/videos.html',
-        controller: 'VideosCtrl'
+        controller: 'VideosCtrl',
+        reloadOnSearch : false
       })
       .when('/photos/:id?', {
         templateUrl: 'views/photos.html',
@@ -58,23 +59,10 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', function($location, CacheService, $rootScope, Restangular, $route){
-      
-        //allow non-reloading path changes, courtesy of this bro: http://joelsaupe.com/programming/angularjs-change-path-without-reloading/
-        var original = $location.path;
-        $location.path = function (path, reload) {
-            if (reload === false) {
-                var lastRoute = $route.current;
-                var un = $rootScope.$on('$locationChangeSuccess', function () {
-                    $route.current = lastRoute;
-                    un();
-                });
-            }
-            return original.apply($location, [path]);
-        };
-        
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', function($location, CacheService, $rootScope, Restangular, $route){      
               
         window.$location = $location;
+        window.$rootScope = $rootScope;
         window.showRelated = function(post){
             CacheService.put('post', post);
             console.log(post);

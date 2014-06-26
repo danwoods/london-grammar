@@ -93,7 +93,7 @@ angular.module('prototypeApp')
             window.skroll = s;
         }, 4000);
         $scope.$on('$destroy', function(){
-          if (typeof s != 'undefined'){
+          if (typeof s !== 'undefined'){
             s.destroy();
           }
         });
