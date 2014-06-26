@@ -4,7 +4,7 @@
 
 .video.excerpt {
   h4{
-    color: @black; //example of a LESS variable being used.
+    color: @black;
     font-size: 1em;
     text-transform: capitalize;
     text-align: left;
@@ -41,23 +41,35 @@
  
 .video.full {
   h2{
-    color: @black; //example of a LESS variable being used. - @black is defined at the top of framework.less
-    font-size: 1.8em;
+    color: @black;
     text-align: left; 
-    float: left;  
+    float: left; 
+    width:60%;
+    @media all and (max-width:1050px){
+      max-width: 15em;
+    } 
+    @media all and (max-width:850px){
+      width: 100%;
+      max-width:none;
+    }
+   
   }
   .description {
-    color: #000000;//can this be inherited automatically? try and avoid specifying things
-    //unless their absolutely needed, because IE if client requests color change, you'll have to change every instance of this, instead of just one.
-    font-size: 1em; //Same as above
     text-transform: none;
+    clear: both;
   }
   .share {
-    width: 450px;//remember what I said about always using em or % :)
-    
     float: right;
     vertical-align: top;
-    padding-top: 1%;//padding or margins I would consider a non-relative measurement, and would almost always use em.
+    padding-top: 1.4em;
+    width:40%;
+    max-width: 26em;
+    @media all and (max-width:850px){
+      width: 100%;
+      max-width:none;
+      padding-top: 0em;
+      padding-bottom: 1em;
+    }
   }
   
 }

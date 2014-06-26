@@ -172,25 +172,14 @@ h1.superbig {
   -ms-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
   transform: translate3d(0px, 0px, 0px);
-  margin: 1rem;
+  margin: 0.25rem;
   display: block;
   border: 1px solid;
-  padding-top: 0.2em;
+  padding: 0.6em;
   text-transform: uppercase;
-  font-size: 1.4em;
+  font-size: 0.9em;
   line-height: 1em;
   background-image: none;
-}
-@media all and (max-width: 850px) {
-  .engage-button .engage-button-inner {
-    font-size: 1.5em;
-    min-height: 2.5em;
-  }
-}
-@media all and (max-width: 500px) {
-  .engage-button .engage-button-inner {
-    font-size: 1.2em;
-  }
 }
 .engage-button .engage-button-inner:hover {
   color: white;
@@ -198,6 +187,7 @@ h1.superbig {
 .engage-button .engage-button-inner .fa {
   margin-left: 0.2em;
   margin-right: 0.6em;
+  font-size: 1.4em;
 }
 .engage-button .engage-button-inner:hover.facebook {
   background-color: #3b5998;
@@ -233,32 +223,12 @@ h1.superbig {
   background-position: 0 0;
 }
 .addthis_toolbox {
-  margin: 0 -1rem;
-}
-.addthis_toolbox .engage-button.facebook-like .facebook.button {
-  min-height: 1.525em;
-  cursor: default;
-  text-align: center;
-}
-.addthis_toolbox .engage-button.facebook-like .facebook.button:hover {
-  background: #3b5998;
+  margin: 0 -0.25rem;
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
   width: 33.33333333%;
   overflow: hidden;
-}
-@media all and (max-width: 850px) {
-  .addthis_toolbox .engage-button .fa {
-    display: block;
-    margin: 0 auto;
-  }
-  .addthis_toolbox .engage-button .engage-button-inner {
-    margin: 0.5rem;
-  }
-}
-.addthis_toolbox .engage-button-inner {
-  padding: 0.25em;
 }
 .blocker2 {
   left: 0;
@@ -548,20 +518,39 @@ article.video {
 }
 .video.full h2 {
   color: #111111;
-  font-size: 1.8em;
   text-align: left;
   float: left;
+  width: 60%;
+}
+@media all and (max-width: 1050px) {
+  .video.full h2 {
+    max-width: 15em;
+  }
+}
+@media all and (max-width: 850px) {
+  .video.full h2 {
+    width: 100%;
+    max-width: none;
+  }
 }
 .video.full .description {
-  color: #000000;
-  font-size: 1em;
   text-transform: none;
+  clear: both;
 }
 .video.full .share {
-  width: 450px;
   float: right;
   vertical-align: top;
-  padding-top: 1%;
+  padding-top: 1.4em;
+  width: 40%;
+  max-width: 26em;
+}
+@media all and (max-width: 850px) {
+  .video.full .share {
+    width: 100%;
+    max-width: none;
+    padding-top: 0em;
+    padding-bottom: 1em;
+  }
 }
 .VideosCtrl .video.full {
   margin: 1em auto;

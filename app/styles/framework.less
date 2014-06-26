@@ -186,18 +186,16 @@ img {
 .engage-button {
     .engage-button-inner {
       .HWRENDER;
-      margin:1rem;
+      margin:0.25rem;
       display: block;
       border:1px solid;
-      padding-top: 0.2em;
+      padding: 0.6em;
       text-transform: uppercase;
-      font-size: 1.4em;
+      font-size: 0.9em;
+      
       @media all and (max-width:850px){
-        font-size:1.5em;
-        min-height:2.5em; 
       }
       @media all and (max-width:500px){
-        font-size:1.2em; 
       }
       line-height:1em;
       background-image:none;
@@ -207,6 +205,7 @@ img {
       .fa {
         margin-left:0.2em;
         margin-right: 0.6em;
+        font-size: 1.4em;
       }
       &:hover.facebook {
         background-color:@facebook;
@@ -249,33 +248,11 @@ img {
 }
 
 .addthis_toolbox {
-  margin:0 -1rem;
-  .engage-button.facebook-like {
-    .facebook.button {
-     min-height: 1.525em;
-    cursor: default;
-    text-align: center;
-    &:hover {
-      background:@facebook;
-    }
-    }
-  }
+  margin:0 -0.25rem;
   .engage-button {
-    @media all and (max-width:850px){
-      .fa {
-        display:block;
-        margin:0 auto;
-      }
-      .engage-button-inner {
-       margin:0.5rem; 
-      }
-    }
     display:inline-block;
     width:(100%/3);
     overflow:hidden;
-  }
-  .engage-button-inner {
-    padding:0.25em;
   }
 }
 
