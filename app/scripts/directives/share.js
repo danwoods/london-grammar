@@ -9,7 +9,8 @@ function($timeout, configuration, $rootScope) {
 			slug : '=slug',
 			desc : '=',
 			text : '@',
-			image: '@'
+			image: '@',
+			url: '@'
 		},
 		templateUrl : 'partials/share.html',
 		restrict : 'E',

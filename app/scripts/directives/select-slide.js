@@ -7,7 +7,7 @@
  * # selectSlide
  */
 angular.module('prototypeApp')
-  .directive('selectSlide', function () {//directive for setting the slide on a carousel as active, based upon a check
+  .directive('selectSlide',['$location', '$routeParams', function ($location, $routeParams) {//directive for setting the slide on a carousel as active, based upon a check
     return {
       template: '<div></div>',
       restrict: 'AE',
@@ -31,6 +31,21 @@ angular.module('prototypeApp')
             }
           }
         });
+        $scope.$watch('currentSlide.active', function(val){
+          function getID(){
+            return $scope.slides[$scope.index].ID || $scope.slides[$scope.index].id;
+          }//kludge;
+          console.log('current slide is active?: ', val);
+          if (val){
+            window.$location = $location;
+            window.$routeParams = $routeParams;
+            //console.log($location.path().replace($routeParams.id, 'lol.'));
+            var newUrl = $location.path().replace($routeParams.id, getID() );
+            $routeParams.id = getID();
+            console.log(newUrl, $scope.slides[$scope.index], getID());
+            $location.path(newUrl, false);
+          }
+        });
       }
     };
-  });
+  }]);

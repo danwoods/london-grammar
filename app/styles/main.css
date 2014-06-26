@@ -87,7 +87,7 @@ h1.superbig {
   font-size: 2em;
   text-align: center;
   line-height: 1em;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 .clearfix {
   clear: both;
@@ -181,31 +181,28 @@ h1.superbig {
   line-height: 1em;
   background-image: none;
 }
-.engage-button .engage-button-inner:hover {
-  color: white;
-}
 .engage-button .engage-button-inner .fa {
   margin-left: 0.2em;
   margin-right: 0.6em;
   font-size: 1.4em;
 }
 .engage-button .engage-button-inner:hover.facebook {
-  background-color: #3b5998;
+  color: #3481d2;
 }
 .engage-button .engage-button-inner.email {
   background-color: #24bbbf;
 }
 .engage-button .engage-button-inner:hover.twitter {
-  background-color: #00aced;
+  color: #00bdd4;
 }
 .engage-button .engage-button-inner:hover.google {
-  background-color: #e52d27;
+  color: #fe415b;
 }
 .engage-button .engage-button-inner.pinterest {
   background-color: #c8232c;
 }
 .engage-button .engage-button-inner.youtube {
-  background-color: #e52d27;
+  background-color: #fe415b;
 }
 .engage-button .engage-button-inner.spotify {
   background-color: #81b71a;
@@ -364,7 +361,7 @@ h1.superbig {
 .blog.full,
 .album.full,
 article.video {
-  padding: 1.5em;
+  padding: 1.25em;
   margin: 1em 0;
 }
 .promotion.big .promotion-inner {
@@ -516,28 +513,33 @@ article.video {
 .video.excerpt .preview-image {
   width: 100%;
 }
-.video.full h2 {
+.video.full h2,
+.photo.full h2 {
   color: #111111;
   text-align: left;
   float: left;
   width: 60%;
 }
 @media all and (max-width: 1050px) {
-  .video.full h2 {
+  .video.full h2,
+  .photo.full h2 {
     max-width: 15em;
   }
 }
 @media all and (max-width: 850px) {
-  .video.full h2 {
+  .video.full h2,
+  .photo.full h2 {
     width: 100%;
     max-width: none;
   }
 }
-.video.full .description {
+.video.full .description,
+.photo.full .description {
   text-transform: none;
   clear: both;
 }
-.video.full .share {
+.video.full .share,
+.photo.full .share {
   float: right;
   vertical-align: top;
   padding-top: 1.4em;
@@ -545,7 +547,8 @@ article.video {
   max-width: 26em;
 }
 @media all and (max-width: 850px) {
-  .video.full .share {
+  .video.full .share,
+  .photo.full .share {
     width: 100%;
     max-width: none;
     padding-top: 0em;
@@ -593,7 +596,7 @@ article.video {
   overflow: hidden;
   position: relative;
 }
-.photo .photo-inner a {
+.photo .photo-inner a.link {
   display: block;
 }
 .photo .photo-inner img {

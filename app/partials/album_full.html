@@ -4,7 +4,7 @@
 			<img src="{{a.image.sizes.medium.url}}" width="{{a.image.sizes.medium.width}}" height="{{a.image.sizes.medium.height}}" alt="{{a.image.alt}}">
 		</div>		
 		<h2 class="title">{{a.title}}</h2>
-		<h4 class="subtitle date release-date">released {{ a.date | time:'DD.MM.YY' }}</h4>
+		<h4 class="subtitle date release-date">released {{ a.release_date | time:'DD.MM.YY':'YYYYMMDD' }}</h4>
 		<div class="divider"></div>
 		<div class="content" ng-bind-html="a.conten"></div>
 		<div class="tracklist">

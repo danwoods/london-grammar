@@ -85,13 +85,15 @@ angular.module('prototypeApp')
         
         
         $timeout(function(){
+            console.log('starting skrollr.');
             var s = skrollr.init({
               forceHeight : false
             });
+            s.refresh();
             window.skroll = s;
         }, 4000);
         $scope.$on('$destroy', function(){
-          if (s){
+          if (typeof s != 'undefined'){
             s.destroy();
           }
         });
