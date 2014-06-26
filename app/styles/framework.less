@@ -187,10 +187,10 @@ img {
       .HWRENDER;
       margin:1rem;
       display: block;
-      color: white;
+      border:1px solid;
       padding-top: 0.2em;
       text-transform: uppercase;
-      font-size: 1.7em;
+      font-size: 1.4em;
       @media all and (max-width:850px){
         font-size:1.5em;
         min-height:2.5em; 
@@ -200,24 +200,23 @@ img {
       }
       line-height:1em;
       background-image:none;
-      border:none;
       &:hover {
-        opacity:0.8;
+       color: white;
       }
       .fa {
         margin-left:0.2em;
         margin-right: 0.6em;
       }
-      &.facebook {
+      &:hover.facebook {
         background-color:@facebook;
       }
       &.email {
         background-color:@turquoise;
       }
-      &.twitter {
+      &:hover.twitter {
         background-color:@twitter;
       }
-      &.google {
+      &:hover.google {
         background-color:@google;
       }
       &.pinterest {
@@ -271,7 +270,7 @@ img {
       }
     }
     display:inline-block;
-    width:(100%/4);
+    width:(100%/3);
     overflow:hidden;
   }
   .engage-button-inner {
