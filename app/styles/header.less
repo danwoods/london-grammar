@@ -1,6 +1,10 @@
 .header {
-  background:black;
+  background:@black;
   color:white;
+  &.active {
+    background:white;
+    color:@black;
+  }
 }
 .social-nav {
   overflow:hidden;
@@ -47,12 +51,21 @@
   .menu-overlay {
     position:absolute;
     .fill;
-    background:black;
+    background:white;
     .close {
-      
+      top: 1em;
+      right: 1em;
     }
     .main-menu {
-      
+      text-align:center;
+      a {
+        margin:0.5em;
+        padding:0.25em;
+        line-height: 3em;
+        &:hover, &.active {
+          text-decoration:underline;
+        }
+      }
     }
   }
 }

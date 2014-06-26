@@ -127,7 +127,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -227,7 +227,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
@@ -556,16 +556,6 @@ article.video {
   margin: 1em auto;
   max-width: 1400px;
 }
-.VideosCtrl .close {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  z-index: 999;
-  cursor: pointer;
-}
-.VideosCtrl .close .fa {
-  font-size: 1.5em;
-}
 .album {
   text-align: left;
 }
@@ -635,8 +625,12 @@ article.video {
   text-align: center;
 }
 .header {
-  background: black;
+  background: #111111;
   color: white;
+}
+.header.active {
+  background: white;
+  color: #111111;
 }
 .social-nav {
   overflow: hidden;
@@ -695,7 +689,23 @@ article.video {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background: black;
+  background: white;
+}
+.header .menu-overlay .close {
+  top: 1em;
+  right: 1em;
+}
+.header .menu-overlay .main-menu {
+  text-align: center;
+}
+.header .menu-overlay .main-menu a {
+  margin: 0.5em;
+  padding: 0.25em;
+  line-height: 3em;
+}
+.header .menu-overlay .main-menu a:hover,
+.header .menu-overlay .main-menu a.active {
+  text-decoration: underline;
 }
 .SignUpCtrl h2 {
   font-weight: 100;
@@ -934,4 +944,18 @@ body {
 }
 .slide {
   text-align: center;
+}
+.close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 999;
+  cursor: pointer;
+}
+.close .fa {
+  font-size: 1.5em;
+}
+.content-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
 }
