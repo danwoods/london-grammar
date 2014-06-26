@@ -543,6 +543,9 @@ article.video {
   line-height: 1em;
   margin-left: 0.075em;
 }
+.video.excerpt .preview-image {
+  width: 100%;
+}
 .video.full h2 {
   color: #000000;
   font-size: 1.8em;
@@ -567,8 +570,21 @@ article.video {
 .VideosCtrl .close .fa {
   font-size: 1.5em;
 }
+.album {
+  text-align: left;
+}
 .album .media-container img {
   width: 100%;
+}
+.album .divider {
+  border-bottom: 1px solid black;
+  margin: 1em 0;
+}
+.album .title {
+  margin: 0.5em 0;
+}
+.album .subtitle {
+  margin: 0;
 }
 .track .track-number {
   margin-right: 0.5em;
@@ -578,8 +594,13 @@ article.video {
 }
 .product-links .row {
   border: 1px solid black;
-  text-align: left;
   padding: 0.5em;
+  display: block;
+  margin: 0.5em 0;
+}
+.product-links .row:hover {
+  background: black;
+  color: white;
 }
 .photo .photo-inner {
   margin: 0.5em;

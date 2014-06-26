@@ -61,6 +61,17 @@ angular.module('prototypeApp')
         Restangular.one('album/').get({
         }).then(function(response) {
             $scope.albums = response.data;
+            $scope.albums.forEach(function(item, idx, arr){//kludge
+              item.tracklisting.forEach(function(track, idx, arr){
+                Restangular.one('track/').get({
+                  id : track.ID
+                }).then(function(response){
+                  //console.log('fetched track:', response);
+                  arr[idx] = response.data;
+                });
+              });
+            });
+            
             $scope.album_chunks = breakIt($scope.albums);
             console.log('albums', response.data);
         });
@@ -74,7 +85,9 @@ angular.module('prototypeApp')
         
         
         $timeout(function(){
-            var s = skrollr.init();
+            var s = skrollr.init({
+              forceHeight : false
+            });
             window.skroll = s;
         }, 4000);
         $scope.$on('$destroy', function(){

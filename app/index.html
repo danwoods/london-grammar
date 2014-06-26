@@ -42,7 +42,11 @@
           <div class="close" ng-click="showMenu = 0">
             <i class="fa fa-times"></i>
           </div>
-          hi :P
+          <nav class="main-menu">
+            <a ng-repeat="i in menus.main" href="#/{{i.url}}">
+            {{i.name}}
+            </a>
+          </nav>
         </div>
     </header>
     <div class="wrapper">
