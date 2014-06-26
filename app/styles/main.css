@@ -513,7 +513,7 @@ article.video {
   background-size: cover;
 }
 .video.excerpt h4 {
-  color: #000000;
+  color: #111111;
   font-size: 1em;
   text-transform: capitalize;
   text-align: left;
@@ -547,14 +547,21 @@ article.video {
   width: 100%;
 }
 .video.full h2 {
-  color: #000000;
+  color: #111111;
   font-size: 1.8em;
   text-align: left;
+  float: left;
 }
 .video.full .description {
   color: #000000;
   font-size: 1em;
   text-transform: none;
+}
+.video.full .share {
+  width: 450px;
+  float: right;
+  vertical-align: top;
+  padding-top: 1%;
 }
 .VideosCtrl .video.full {
   margin: 1em auto;
