@@ -15,8 +15,34 @@
  .subtitle {
    margin:0;
  }
+ .content {
+  text-transform: none;
+  font-weight: 100;
+  font-size: 0.97em;
+ }
 }
 
+
+.album.full {
+  overflow:hidden;
+  .title {
+    margin-top:0;
+  }
+  .title, .subtitle, .content, .divider, .tracklist {
+    float:right;
+    width:50%;
+  }
+  .product-links, .media-container {
+    width:50%;
+    float:left;
+  }
+  .media-container, .product-links {
+    padding-right:1em;
+  }
+  .product-links {
+    clear:left;
+  }
+}
 
 
 

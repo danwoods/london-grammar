@@ -1,12 +1,12 @@
-<article class="album full">
+<article class="album excerpt">
 	<div class="album-inner">
 		<div class="media-container">
 			<img src="{{a.image.sizes.medium.url}}" width="{{a.image.sizes.medium.width}}" height="{{a.image.sizes.medium.height}}" alt="{{a.image.alt}}">
-		</div>
+		</div>		
 		<h2 class="title">{{a.title}}</h2>
 		<h4 class="subtitle date release-date">released {{ a.release_date | time:'DD.MM.YY':'YYYYMMDD' }}</h4>
 		<div class="divider"></div>
-		<div class="content" ng-bind-html="a.content"></div>
+		<div class="content" ng-bind-html="a.conten"></div>
 		<div class="tracklist">
 		  <span class="tracklisting-title">Tracklist</span>
 			<div ng-repeat="t in a.tracklisting" class="track excerpt">
