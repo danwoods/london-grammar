@@ -77,6 +77,7 @@ h1.superbig {
   color: #24bbbf;
 }
 .wrapper {
+  padding-top: 3.9em;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -688,7 +689,11 @@ article.video {
   cursor: pointer;
 }
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 36px -12px #000000;
 }
 .header .header-inner {
   position: relative;

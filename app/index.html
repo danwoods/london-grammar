@@ -43,7 +43,8 @@
             <i class="fa fa-times"></i>
           </div>
           <nav class="main-menu">
-            <a ng-repeat="i in menus.main" href="#/{{i.url}}">
+            <!-- <a ng-repeat="i in menus.main" href="#{{i.url}}"> -->
+            <a ng-repeat="i in menus.main" ng-click="ScrollTo(i.url); alert('clicked');" href="">
             {{i.name}}
             </a>
           </nav>
@@ -82,6 +83,7 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jQuery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
@@ -99,6 +101,7 @@
     <script src="bower_components/eventEmitter/EventEmitter.js"></script>
     <script src="bower_components/eventie/eventie.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/jquery-waypoints/waypoints.js"></script>
     <!-- endbower -->
     <script src="scripts/vendor/skrollr.min.js"></script>
     <script src="scripts/vendor/fitvids.js"></script>
@@ -130,6 +133,8 @@
         <script src="scripts/directives/photo-full.js"></script>
         <script src="scripts/directives/album-full.js"></script>
         <script src="scripts/directives/album-excerpt.js"></script>
+        <script src="scripts/services/scroll-to.js"></script>
+        <script src="scripts/directives/link-handler.js"></script>
         <!-- endbuild -->
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52de4733263c4c40"></script>
