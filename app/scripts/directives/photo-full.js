@@ -23,13 +23,13 @@ angular.module('prototypeApp')
                   meta = $('.meta');
               function getAvailableHeight(){
                 var val = $(window).height() - ( meta.outerHeight(true) + header.outerHeight(true) ) - 200;//arbitrary value for padding...
-                console.log(val);
+                //console.log(val);
                 return val;
               }
               imagesLoaded(element, function(){
                 console.log('images loaded');
                 img.css({
-                  height : getAvailableHeight() + 'px'
+                  maxHeight : getAvailableHeight() + 'px'
                 });
               });
             }

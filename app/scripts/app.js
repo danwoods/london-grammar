@@ -40,7 +40,8 @@ angular
       })
       .when('/photos/:id?', {
         templateUrl: 'views/photos.html',
-        controller: 'PhotosCtrl'
+        controller: 'PhotosCtrl',
+        reloadOnSearch : false
       })
       .otherwise({
         redirectTo: '/'
