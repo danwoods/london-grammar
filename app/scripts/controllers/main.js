@@ -62,6 +62,7 @@ angular.module('prototypeApp')
         }).then(function(response) {
             $scope.albums = response.data;
             $scope.albums.forEach(function(item, idx, arr){//kludge
+              if (item.tracklisting){
               item.tracklisting.forEach(function(track, idx, arr){
                 Restangular.one('track/').get({
                   id : track.ID
@@ -70,6 +71,7 @@ angular.module('prototypeApp')
                   arr[idx] = response.data;
                 });
               });
+              }
             });
             
             $scope.album_chunks = breakIt($scope.albums);
