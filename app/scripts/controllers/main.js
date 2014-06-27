@@ -104,7 +104,6 @@ function($scope, Restangular, $timeout) {
           if (typeof s != 'undefined'){
             s.destroy();
           }
->>>>>>> 1ea9ba605e0cc3d83c139b4ffa7b7ca90f5f81a8
         });
       });
       }
