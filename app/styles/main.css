@@ -128,7 +128,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
   }
 }
 @media all and (min-width: 800px) {
@@ -225,7 +225,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
   overflow: hidden;
 }
 .blocker2 {
@@ -681,7 +681,7 @@ article.video {
   margin-left: 0;
 }
 .social-nav li .fa {
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 .menu-trigger {
   font-weight: 100;
@@ -968,6 +968,10 @@ article.video {
 }
 .footer .footer-inner {
   padding: 1em;
+  color: #ebebeb;
+}
+.footer .mos-logo {
+  width: 3em;
 }
 body {
   background: #fff;
