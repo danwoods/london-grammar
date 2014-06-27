@@ -127,7 +127,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -224,7 +224,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
@@ -359,10 +359,9 @@ h1.superbig {
   z-index: 5;
 }
 .blog.full,
-.album.full,
+.album,
 article.video {
   padding: 1.25em;
-  margin: 1em 0;
 }
 .promotion.big .promotion-inner {
   height: 45rem;
@@ -574,6 +573,37 @@ article.video {
 }
 .album .subtitle {
   margin: 0;
+}
+.album .content {
+  text-transform: none;
+  font-weight: 100;
+  font-size: 0.97em;
+}
+.album.full {
+  overflow: hidden;
+}
+.album.full .title {
+  margin-top: 0;
+}
+.album.full .title,
+.album.full .subtitle,
+.album.full .content,
+.album.full .divider,
+.album.full .tracklist {
+  float: right;
+  width: 50%;
+}
+.album.full .product-links,
+.album.full .media-container {
+  width: 50%;
+  float: left;
+}
+.album.full .media-container,
+.album.full .product-links {
+  padding-right: 1em;
+}
+.album.full .product-links {
+  clear: left;
 }
 .track .track-number {
   margin-right: 0.5em;
@@ -927,6 +957,12 @@ article.video {
   border: 1px solid #ccc;
   margin-right: .5em;
   font-weight: bold;
+}
+.footer {
+  background: black;
+}
+.footer .footer-inner {
+  padding: 1em;
 }
 body {
   background: #fff;

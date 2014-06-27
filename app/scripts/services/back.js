@@ -20,7 +20,8 @@ angular.module('prototypeApp')
         window.history.back();
       }
       else {
-        $location.path('/');
+        //$location.path('/');
+        $location.url($location.path('/'));
       }
     };
   }]);
