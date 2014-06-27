@@ -44,7 +44,7 @@
           </div>
           <nav class="main-menu">
             <!-- <a ng-repeat="i in menus.main" href="#{{i.url}}"> -->
-            <a ng-repeat="i in menus.main" ng-click="ScrollTo(i.url); alert('clicked');" href="">
+            <a ng-repeat="i in menus.main" link-handler link="i" href="">
             {{i.name}}
             </a>
           </nav>
@@ -133,7 +133,6 @@
         <script src="scripts/directives/photo-full.js"></script>
         <script src="scripts/directives/album-full.js"></script>
         <script src="scripts/directives/album-excerpt.js"></script>
-        <script src="scripts/services/scroll-to.js"></script>
         <script src="scripts/directives/link-handler.js"></script>
         <!-- endbuild -->
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>

@@ -60,12 +60,10 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', 'ScrollTo', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, ScrollTo){      
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll){      
         window.$anchorScroll = $anchorScroll;      
         window.$location = $location;
         window.$rootScope = $rootScope;
-        window.ScrollTo = ScrollTo;
-        $rootScope.ScrollTo = ScrollTo;
         window.showRelated = function(post){
             CacheService.put('post', post);
             console.log(post);

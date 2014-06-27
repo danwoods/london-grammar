@@ -77,8 +77,8 @@ h1.superbig {
   color: #24bbbf;
 }
 .wrapper {
-  padding-top: 3.9em;
   margin: 0 auto;
+  margin-top: 3.9em;
   position: relative;
   overflow: hidden;
 }
@@ -128,7 +128,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -225,7 +225,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
