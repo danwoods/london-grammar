@@ -1,7 +1,9 @@
-<back></back>
-<carousel>
-  <slide ng-repeat="i in images" active="slide.active">
-    <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="images"></select-slide>
-    <photo-full image="i"></photo-full>
-  </slide>
-</carousel>
+<div class="content-wrapper">
+  <back></back>
+  <carousel>
+    <slide ng-repeat="i in images" active="slide.active">
+      <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="images"></select-slide>
+      <photo-full image="i"></photo-full>
+    </slide>
+  </carousel>
+</div>

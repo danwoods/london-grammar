@@ -67,6 +67,44 @@ function($scope, Restangular, $timeout) {
         }).then(function(response) {
           //console.log('fetched track:', response);
           arr[idx] = response.data;
+
+            $scope.albums = response.data;
+            $scope.albums.forEach(function(item, idx, arr){//kludge
+              item.tracklisting.forEach(function(track, idx, arr){
+                Restangular.one('track/').get({
+                  id : track.ID
+                }).then(function(response){
+                  //console.log('fetched track:', response);
+                  arr[idx] = response.data;
+                });
+              });
+            });
+            
+            $scope.album_chunks = breakIt($scope.albums);
+            console.log('albums', response.data);
+        });
+        
+        Restangular.one('page/').get({
+            slug : "contact"
+        }).then(function(response){
+            $scope.contactPage = [response.data];
+            console.log('contact', response.data);
+        });
+        
+        
+        $timeout(function(){
+            console.log('starting skrollr.');
+            var s = skrollr.init({
+              forceHeight : false
+            });
+            s.refresh();
+            window.skroll = s;
+        }, 4000);
+        $scope.$on('$destroy', function(){
+          if (typeof s != 'undefined'){
+            s.destroy();
+          }
+>>>>>>> 1ea9ba605e0cc3d83c139b4ffa7b7ca90f5f81a8
         });
       });
       }

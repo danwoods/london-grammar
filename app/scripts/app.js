@@ -58,7 +58,22 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', function($location, CacheService, $rootScope, Restangular){
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', function($location, CacheService, $rootScope, Restangular, $route){
+      
+        //allow non-reloading path changes, courtesy of this bro: http://joelsaupe.com/programming/angularjs-change-path-without-reloading/
+        var original = $location.path;
+        $location.path = function (path, reload) {
+            if (reload === false) {
+                var lastRoute = $route.current;
+                var un = $rootScope.$on('$locationChangeSuccess', function () {
+                    $route.current = lastRoute;
+                    un();
+                });
+            }
+            return original.apply($location, [path]);
+        };
+        
+              
         window.$location = $location;
         window.showRelated = function(post){
             CacheService.put('post', post);

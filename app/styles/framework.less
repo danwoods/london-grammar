@@ -1,9 +1,13 @@
+.processColor(@color){
+  @-: spin( saturate( lighten(@color, 40%), 20%), -10);
+}
 @orange: #f8aa3a;
 @orange2: #f97d01;
 @turquoise: #24bbbf;
-@facebook: #3b5998;
-@google: rgb(229,45,39);
-@twitter: #00aced;
+
+@facebook: spin( saturate( lighten(#3b5998, 10%), 20%), -10);
+@google:  spin( saturate( lighten(rgb(229,45,39), 10%), 20%), -10);
+@twitter: spin( saturate( lighten(#00aced, -5%), 20%), -10);
 @instagram: #3f729b;
 @pinterest: #c8232c;
 @tumblr: #34526f;
@@ -104,7 +108,7 @@ img {
   font-size:2em;
   text-align:center;
   line-height:1em;
-  transition:all 0.5s;
+  transition:all 0.2s;
 }
 
 .clearfix {
@@ -201,7 +205,7 @@ img {
       line-height:1em;
       background-image:none;
       &:hover {
-       color: white;
+       
       }
       .fa {
         margin-left:0.2em;
@@ -209,16 +213,16 @@ img {
         font-size: 1.4em;
       }
       &:hover.facebook {
-        background-color:@facebook;
+        color:@facebook;
       }
       &.email {
         background-color:@turquoise;
       }
       &:hover.twitter {
-        background-color:@twitter;
+        color:@twitter;
       }
       &:hover.google {
-        background-color:@google;
+        color:@google;
       }
       &.pinterest {
         background-color:@pinterest;
@@ -392,7 +396,7 @@ img {
 
 //temp;
 .blog.full, .album.full, article.video {
-  padding: 1.5em;
+  padding: 1.25em;
 //  background: white;
  // border: 1px solid;
   margin: 1em 0;

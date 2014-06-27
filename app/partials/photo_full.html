@@ -1,17 +1,16 @@
 <article class="photo full">
     <div class="photo-inner">
         <div class="image-container">
-            <a  ng-href="{{i.url}}" target="_blank">
             <img ng-src="{{i.sizes.full.url}}" alt="{{i.alt}}" title="{{i.title}}" height="{{i.sizes.full.height}}" width="{{i.sizes.full.width}}"/>
-            <div class="meta overlay">
-                <div class="meta-inner">
-                    <h4 ng-if="i.title" class="title">{{i.title}}</h4>
-                    <div ng-if="i.caption" class="caption">{{i.caption}}</div>
-                    <div ng-if="i.description" class="description content" ng-bind-html="i.description">
-                    </div>
-                </div>
-            </div>
-           </a>
         </div>
+          <div class="meta overlay">
+              <div class="meta-inner">
+                  <h2 ng-if="i.title" class="title">{{i.title}}</h2>
+                  <share url="'x/photos/i.title'"></share>
+                  <div ng-if="i.caption" class="caption">{{i.caption}}</div>
+                  <div ng-if="i.description" class="description content" ng-bind-html="i.description">
+                  </div>
+              </div>
+          </div>
     </div>
 </article>
