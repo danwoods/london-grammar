@@ -40,9 +40,8 @@ angular.module('prototypeApp')
             window.$location = $location;
             window.$routeParams = $routeParams;
             //console.log($location.path().replace($routeParams.id, 'lol.'));
-            var newUrl = $location.path().replace($routeParams.id, getID() );
-            $routeParams.id = getID();
-            console.log(newUrl, $scope.slides[$scope.index], getID());
+            //var newUrl = $location.path().replace($routeParams.id, getID() );
+            //console.log(newUrl, $scope.slides[$scope.index], getID());
             //$location.path(newUrl);
             $location.search('id', getID());
           }
