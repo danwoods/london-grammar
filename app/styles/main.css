@@ -78,7 +78,6 @@ h1.superbig {
 }
 .wrapper {
   margin: 0 auto;
-  margin-top: 3.9em;
   position: relative;
   overflow: hidden;
 }
@@ -373,6 +372,7 @@ body {
   height: auto !important;
   height: 100%;
   padding-top: 4em;
+  padding-bottom: 6em;
   margin: 0 auto -5.08em /* the bottom margin is the negative value of the footer's height */;
 }
 .promotion.big .promotion-inner {
@@ -983,6 +983,17 @@ body {
 }
 .footer .mos-logo {
   width: 3em;
+}
+.tour-container {
+  height: 400px;
+  overflow: hidden;
+}
+.tour-container.active {
+  height: auto;
+}
+.tour-expand-button {
+  margin-top: 1.5em;
+  font-size: 1.5em;
 }
 body {
   background: #fff;
