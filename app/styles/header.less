@@ -42,11 +42,23 @@
   box-shadow: 0 0 36px -12px black;
   .header-inner {
     position:relative;
-    .flex-display;
-    .justify-content( space-between );
-    .align-items (center);
+    height:3.4em;
     .menu-trigger, .logo, .social-nav {
       vertical-align:middle;
+      position:absolute;
+    }
+    .logo {
+      left:50%;
+      margin-left:-3.5em;
+      width:7em;
+    }
+    .menu-trigger {
+      right:1em;
+      top:0;
+    }
+    .social-nav {
+      left: 1em;
+      top:0.45em;
     }
   }
   .header-inner, .menu-overlay {

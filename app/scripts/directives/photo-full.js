@@ -20,9 +20,10 @@ angular.module('prototypeApp')
             function init(){
               var img = element.find('.image-container img'),
                   header = $('.header'),
-                  meta = $('.meta');
+                  meta = $('.meta'),
+                  footer = $('.footer');
               function getAvailableHeight(){
-                var val = $(window).height() - ( meta.outerHeight(true) + header.outerHeight(true) ) - 200;//arbitrary value for padding...
+                var val = $(window).height() - ( meta.outerHeight(true) + footer.outerHeight(true) + header.outerHeight(true) ) - 300;//arbitrary value for padding...
                 //console.log(val);
                 return val;
               }

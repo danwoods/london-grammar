@@ -371,9 +371,9 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  margin: 0 auto -5.08em /* the bottom margin is the negative value of the footer's height */;
+  padding-top: 3.3em;
+  padding-bottom: 5em;
+  margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */;
 }
 .promotion.big .promotion-inner {
   height: 45rem;
@@ -383,6 +383,7 @@ body {
   height: 50%;
 }
 .promotion.lyric .content {
+  display: none;
   font-size: 1.4em;
   line-height: 1.5em;
 }
@@ -464,7 +465,7 @@ body {
   z-index: -1;
 }
 .promotion .promotion-inner {
-  height: 35rem;
+  height: 25rem;
   position: relative;
   -webkit-background-size: cover;
   background-size: cover;
@@ -503,8 +504,8 @@ body {
 .video.excerpt a .icon-overlay {
   position: absolute;
   top: 50%;
-  margin-top: -0.5em;
-  margin-left: -0.5em;
+  margin-top: -0.75em;
+  margin-left: -0.75em;
   font-size: 1.5em;
   left: 50%;
   color: white;
@@ -623,6 +624,9 @@ body {
 .product-links .link {
   display: block;
 }
+.product-links .fa {
+  display: none;
+}
 .product-links .row {
   border: 1px solid black;
   padding: 0.5em;
@@ -708,24 +712,26 @@ body {
 }
 .header .header-inner {
   position: relative;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+  height: 3.4em;
 }
 .header .header-inner .menu-trigger,
 .header .header-inner .logo,
 .header .header-inner .social-nav {
   vertical-align: middle;
+  position: absolute;
+}
+.header .header-inner .logo {
+  left: 50%;
+  margin-left: -3.5em;
+  width: 7em;
+}
+.header .header-inner .menu-trigger {
+  right: 1em;
+  top: 0;
+}
+.header .header-inner .social-nav {
+  left: 1em;
+  top: 0.45em;
 }
 .header .header-inner,
 .header .menu-overlay {
@@ -976,13 +982,32 @@ body {
 }
 .footer {
   background: black;
+  text-transform: none;
+  font-size: 0.9em;
 }
 .footer .footer-inner {
   padding: 1em;
   color: #ebebeb;
 }
 .footer .mos-logo {
-  width: 3em;
+  width: 2.5em;
+}
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+.footer li {
+  vertical-align: middle;
+  display: inline-block;
+}
+.footer li.mos a {
+  display: block;
+}
+.footer li:before {
+  content: ' | ';
+}
+.footer li:first-child:before {
+  content: '';
 }
 .tour-container {
   height: 400px;
@@ -1000,7 +1025,6 @@ body {
   font-family: 'BT Futura W01', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
-  font-weight: 300;
 }
 .section {
   padding: 2em;
@@ -1028,4 +1052,10 @@ body {
 .content-wrapper {
   max-width: 1050px;
   margin: 0 auto;
+}
+.PhotosCtrl .photo.full {
+  margin: 4em;
+}
+.carousel-controls {
+  margin-top: 1em;
 }
