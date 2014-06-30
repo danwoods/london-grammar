@@ -364,6 +364,17 @@ h1.superbig {
 article.video {
   padding: 1.25em;
 }
+html,
+body {
+  height: 100%;
+}
+.body-inner {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  padding-top: 4em;
+  margin: 0 auto -5.08em /* the bottom margin is the negative value of the footer's height */;
+}
 .promotion.big .promotion-inner {
   height: 45rem;
 }

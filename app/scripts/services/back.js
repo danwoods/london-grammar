@@ -14,14 +14,17 @@ angular.module('prototypeApp')
       back = true;
       watcher();//stop watching, we have everything we need.
     });
+    $rootScope.$on('$locationChangeStart', function(event, next, current) {
+      console.log('location change start', event, next, current);
+    });    
     return function(){
       console.log('okay to use history to go back?', back);
       if (back){
         window.history.back();
       }
       else {
-        //$location.path('/');
-        $location.url($location.path('/'));
+        $location.path('/');
+        //$location.url($location.path('/'));
       }
     };
   }]);

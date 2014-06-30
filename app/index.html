@@ -19,6 +19,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="prototypeApp" class="{{currentController}}">
+    <div class="body-inner">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -52,6 +53,7 @@
     </header>
     <div class="wrapper">
         <div class="container" ng-view=""></div>
+    </div>
     </div>
     <ng-include src="'partials/footer.html'"></ng-include>
     
@@ -105,6 +107,7 @@
     <!-- endbower -->
     <script src="scripts/vendor/skrollr.min.js"></script>
     <script src="scripts/vendor/fitvids.js"></script>
+    <script src="scripts/vendor/songkick.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->

@@ -60,7 +60,7 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll){      
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', 'Back', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, Back){      
         window.$anchorScroll = $anchorScroll;      
         window.$location = $location;
         window.$rootScope = $rootScope;
