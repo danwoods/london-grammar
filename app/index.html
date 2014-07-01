@@ -19,7 +19,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="prototypeApp" class="{{currentController}}">
-    <div class="body-inner">
+    <div class="body-inner" id="skrollr-body">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -48,6 +48,13 @@
             <a ng-repeat="i in menus.main" link-handler link="i" href="">
             {{i.name}}
             </a>
+            <ul class="social-nav nested">
+              <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
+                <a href="{{n.url}}">
+                  <i class="fa" ng-class="n.css"></i>
+                </a>
+              </li>
+            </ul>            
           </nav>
         </div>
     </header>
@@ -104,6 +111,7 @@
     <script src="bower_components/eventie/eventie.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/jquery-waypoints/waypoints.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <script src="scripts/vendor/skrollr.min.js"></script>
     <script src="scripts/vendor/fitvids.js"></script>

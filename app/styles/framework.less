@@ -44,7 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight:300;
   @media all and (max-width:650px){
-    font-size: 14px;
+    font-size: 12px;
   }  
 }
 
@@ -400,21 +400,25 @@ img {
 //  background: white;
  // border: 1px solid;
   //margin: 1em 0;
+  @media all and (max-width:800px){
+    padding:0.5em;
+  }
 }
 
 //sticky footer
-
-html, body {
-  height: 100%;
-}
-.wrapper {
-   //margin-top: 3.9em;//clear header
-}
-.body-inner {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  padding-top:3.3em;
-  padding-bottom:5em;
-  margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */
+@media all and (min-width:800px){
+  html, body {
+    height: 100%;
+  }
+  .wrapper {
+     //margin-top: 3.9em;//clear header
+  }
+  .body-inner {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-top:3.3em;
+    padding-bottom:5em;
+    margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */
+  }
 }

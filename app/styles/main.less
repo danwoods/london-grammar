@@ -19,6 +19,9 @@ body {
 
 .section {
   padding:2em;
+  @media all and (max-width:800px){
+    padding:2em 1em;
+  }  
 }
 .section-title {
   text-align: center;
@@ -46,9 +49,12 @@ body {
   max-width:1050px;
   margin:0 auto;
 }
-.PhotosCtrl {
-  .photo.full {
+.PhotosCtrl, .VideosCtrl {
+  .photo.full, .video.full {
     margin:4em;
+    @media all and (max-width:800px){
+      margin:2em;
+    }
   }
 }
 

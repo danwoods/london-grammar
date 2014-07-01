@@ -85,3 +85,34 @@
     }
   }
 }
+
+.header {
+@media all and (max-width:800px){ //mobile
+    .menu-overlay {
+      position:relative;
+      a {
+        display:block;
+      }
+    }
+    .header-inner .logo {
+      left:1em;
+      margin-left:0;
+    }
+    .social-nav {
+      display:none;
+    }
+    .social-nav.nested {
+      display:block;
+    }
+    &.active {
+      .header-inner {
+        display:none;
+      }
+    }
+}
+@media all and (min-width:800px){ //desktop
+    .social-nav.nested {
+      display:none;
+    }
+  }
+}

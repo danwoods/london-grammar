@@ -15,7 +15,7 @@ body {
 }
 @media all and (max-width: 650px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 h1,
@@ -363,17 +363,26 @@ h1.superbig {
 article.video {
   padding: 1.25em;
 }
-html,
-body {
-  height: 100%;
+@media all and (max-width: 800px) {
+  .blog.full,
+  .album,
+  article.video {
+    padding: 0.5em;
+  }
 }
-.body-inner {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  padding-top: 3.3em;
-  padding-bottom: 5em;
-  margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */;
+@media all and (min-width: 800px) {
+  html,
+  body {
+    height: 100%;
+  }
+  .body-inner {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-top: 3.3em;
+    padding-bottom: 5em;
+    margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */;
+  }
 }
 .promotion.big .promotion-inner {
   height: 45rem;
@@ -550,6 +559,10 @@ body {
   text-transform: none;
   clear: both;
 }
+.video.full .caption,
+.photo.full .caption {
+  clear: both;
+}
 .video.full .share,
 .photo.full .share {
   float: right;
@@ -580,6 +593,7 @@ body {
 .album .divider {
   border-bottom: 1px solid black;
   margin: 1em 0;
+  margin-bottom: 0;
 }
 .album .title {
   margin: 0.5em 0;
@@ -595,6 +609,7 @@ body {
 .album .tracklisting-title {
   display: block;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 .album.full {
   overflow: hidden;
@@ -610,6 +625,15 @@ body {
   float: right;
   width: 50%;
 }
+@media all and (max-width: 800px) {
+  .album.full .tracklist {
+    float: left;
+    padding-right: 2em;
+  }
+  .album.full .title {
+    font-size: 1.7em;
+  }
+}
 .album.full .product-links,
 .album.full .media-container {
   width: 50%;
@@ -617,7 +641,7 @@ body {
 }
 .album.full .media-container,
 .album.full .product-links {
-  padding-right: 1em;
+  padding-right: 2em;
 }
 .album.full .product-links {
   clear: left;
@@ -765,6 +789,32 @@ body {
 .header .menu-overlay .main-menu a:hover,
 .header .menu-overlay .main-menu a.active {
   text-decoration: underline;
+}
+@media all and (max-width: 800px) {
+  .header .menu-overlay {
+    position: relative;
+  }
+  .header .menu-overlay a {
+    display: block;
+  }
+  .header .header-inner .logo {
+    left: 1em;
+    margin-left: 0;
+  }
+  .header .social-nav {
+    display: none;
+  }
+  .header .social-nav.nested {
+    display: block;
+  }
+  .header.active .header-inner {
+    display: none;
+  }
+}
+@media all and (min-width: 800px) {
+  .header .social-nav.nested {
+    display: none;
+  }
 }
 .SignUpCtrl h2 {
   font-weight: 100;
@@ -1058,6 +1108,11 @@ body {
 .section {
   padding: 2em;
 }
+@media all and (max-width: 800px) {
+  .section {
+    padding: 2em 1em;
+  }
+}
 .section-title {
   text-align: center;
   margin-bottom: 1em;
@@ -1081,8 +1136,19 @@ body {
   max-width: 1050px;
   margin: 0 auto;
 }
-.PhotosCtrl .photo.full {
+.PhotosCtrl .photo.full,
+.VideosCtrl .photo.full,
+.PhotosCtrl .video.full,
+.VideosCtrl .video.full {
   margin: 4em;
+}
+@media all and (max-width: 800px) {
+  .PhotosCtrl .photo.full,
+  .VideosCtrl .photo.full,
+  .PhotosCtrl .video.full,
+  .VideosCtrl .video.full {
+    margin: 2em;
+  }
 }
 .carousel-controls {
   margin-top: 1em;

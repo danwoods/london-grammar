@@ -18,7 +18,8 @@
     "normalize-css" : "latest",
     "angular-bootstrap" : "latest",
     "imagesloaded" : "latest",
-    "jquery-waypoints" : "latest"
+    "jquery-waypoints" : "latest",
+    "angular-ui-router" : "latest"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
