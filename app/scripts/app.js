@@ -9,9 +9,24 @@ angular
     'restangular',
     'services.config',
     'nt-youtube',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
+  .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+    $urlRouterProvider.otherwise("/home");
+    $stateProvider
+      .state('home', {
+        url : "/home",
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+      })
+      .state('home.videos', {
+        url : "/videos",
+        templateUrl: "views/videos.html",
+        controller: "VideosCtrl",
+      })
+      ;
+     /*
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -47,7 +62,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  })
+      */
+  }])
   .config(function(RestangularProvider, configuration) {
         RestangularProvider.setBaseUrl(configuration.API);
         RestangularProvider.setDefaultHttpFields({
