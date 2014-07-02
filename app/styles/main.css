@@ -1,5 +1,32 @@
 @import 'bootstrap/css/bootstrap.css';
 @import url('http://fast.fonts.net/cssapi/88d543db-d0aa-493f-b42d-15aa829dc1c7.css');
+.reveal-animation.ng-enter {
+  animation: enter_sequence 0.75s ease-out;
+  /* IE10+ and Future Browsers */
+}
+@keyframes enter_sequence {
+  from {
+    opacity: 0.7;
+    height: 0%;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+.reveal-animation.ng-leave {
+  animation: leave_sequence 0.5s ease-out /* IE10+ and Future Browsers */;
+}
+@keyframes leave_sequence {
+  from {
+    opacity: 1;
+    height: 100%;
+  }
+  to {
+    opacity: 0.7;
+    height: 0%;
+  }
+}
 .HWRENDER {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
@@ -384,6 +411,20 @@ article.video {
     margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */;
   }
 }
+.view-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: white;
+}
+.view-overlay.active {
+  z-index: 9999;
+}
 .promotion.big .promotion-inner {
   height: 45rem;
 }
@@ -474,7 +515,7 @@ article.video {
   z-index: -1;
 }
 .promotion .promotion-inner {
-  height: 25rem;
+  height: 35rem;
   position: relative;
   -webkit-background-size: cover;
   background-size: cover;
@@ -580,7 +621,7 @@ article.video {
     padding-bottom: 1em;
   }
 }
-.VideosCtrl .video.full {
+.view-overlay .video.full {
   margin: 1em auto;
   max-width: 1400px;
 }
@@ -700,6 +741,10 @@ article.video {
 .photo.excerpt .meta .meta-inner {
   padding: 1em;
   text-align: center;
+}
+.photos-view .centerer .center {
+  max-width: 1050px;
+  margin: 0 auto;
 }
 .header {
   background: #111111;
@@ -1107,6 +1152,7 @@ body {
 }
 .section {
   padding: 2em;
+  margin: 1em 0;
 }
 @media all and (max-width: 800px) {
   .section {
@@ -1136,17 +1182,13 @@ body {
   max-width: 1050px;
   margin: 0 auto;
 }
-.PhotosCtrl .photo.full,
-.VideosCtrl .photo.full,
-.PhotosCtrl .video.full,
-.VideosCtrl .video.full {
+.overlay .photo.full,
+.overlay .video.full {
   margin: 4em;
 }
 @media all and (max-width: 800px) {
-  .PhotosCtrl .photo.full,
-  .VideosCtrl .photo.full,
-  .PhotosCtrl .video.full,
-  .VideosCtrl .video.full {
+  .overlay .photo.full,
+  .overlay .video.full {
     margin: 2em;
   }
 }

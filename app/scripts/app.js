@@ -5,6 +5,7 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
+    'ngAnimate',
     'ngRoute',
     'restangular',
     'services.config',
@@ -18,12 +19,24 @@ angular
       .state('home', {
         url : "/home",
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainCtrl'
       })
       .state('home.videos', {
-        url : "/videos",
-        templateUrl: "views/videos.html",
+        url : "^/videos?id",
+        //templateUrl: "views/videos.html",
         controller: "VideosCtrl",
+        reloadOnSearch : false,
+        templateUrl : function ($stateParams){
+          console.log('LOADNG VDEOS VEW');
+          return 'views/videos.html';
+        }
+      })
+      .state('home.photos', {
+        url : "^/photos?id",
+        //templateUrl: "views/videos.html",
+        controller: "PhotosCtrl",
+        reloadOnSearch : false,
+        templateUrl : 'views/photos.html'
       })
       ;
      /*
@@ -77,10 +90,12 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', 'Back', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, Back){      
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', '$state', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, $state){      
         window.$anchorScroll = $anchorScroll;      
         window.$location = $location;
         window.$rootScope = $rootScope;
+        window.$state = $state;
+        $rootScope.$state = $state;
         window.showRelated = function(post){
             CacheService.put('post', post);
             console.log(post);
@@ -90,10 +105,14 @@ angular
             });            
         };
         $rootScope.$on('$routeChangeSuccess', function(ev, data){
+          console.log('route change, bazinga!', ev, data);
           if (data.$$route){
                 $rootScope.currentController = data.$$route.controller;
           }
         });
+        $rootScope.$on("$stateChangeSuccess", function(ev, toState, toParams){
+          console.log('$stateChangeSuccess', ev, toState);
+        })
         
         //bootstrap data.        
         Restangular.one('menu/').get({

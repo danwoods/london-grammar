@@ -1,9 +1,15 @@
-<div class="content-wrapper">
-  <back></back>
-  <carousel>
-    <slide ng-repeat="i in images" active="slide.active">
-      <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="images"></select-slide>
-      <photo-full image="i"></photo-full>
-    </slide>
-  </carousel>
+<div class="photos-view">
+  <div class="centerer">
+    <div class="center">
+      <div class="content-wrapper">
+      <a class="close" ui-sref="^"><i class="fa fa-times"></i></a>
+      <carousel disable-animation="true">
+        <slide ng-repeat="i in images" active="slide.active">
+          <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="images"></select-slide>
+          <photo-full image="i"></photo-full>
+        </slide>
+      </carousel>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 @import 'bootstrap/css/bootstrap.css';
+@import 'animations.less';
 @import 'prefixr.less';
 @import 'framework.less';
 @import 'promotion.less';
@@ -19,6 +20,7 @@ body {
 
 .section {
   padding:2em;
+  margin:1em 0;
   @media all and (max-width:800px){
     padding:2em 1em;
   }  
@@ -49,7 +51,7 @@ body {
   max-width:1050px;
   margin:0 auto;
 }
-.PhotosCtrl, .VideosCtrl {
+.overlay {
   .photo.full, .video.full {
     margin:4em;
     @media all and (max-width:800px){

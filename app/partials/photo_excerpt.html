@@ -1,7 +1,7 @@
 <article class="photo excerpt">
     <div class="photo-inner">
         <div class="image-container">
-            <a  ng-href="#/photos/?id={{i.id}}" class="link">
+            <a ui-sref=".photos({ id : {{i.id}} })" class="link">
             <img ng-src="{{i.sizes.thumbnail.url}}" alt="{{i.alt}}" title="{{i.title}}" height="{{i.sizes.thumbnail.height}}" width="{{i.sizes.thumbnail.width}}"/>
            	<div class="meta overlay">
            		<div class="meta-inner centerer">

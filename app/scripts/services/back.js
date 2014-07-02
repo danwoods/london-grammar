@@ -9,6 +9,7 @@
  */
 angular.module('prototypeApp')
   .service('Back', ['$rootScope', '$location', '$route', '$timeout', function Back($rootScope, $location, $route, $timeout) {
+    return; //DEPRECATED;
     var back = false,
     y,
     watcher = $rootScope.$on('$routeChangeSuccess', function(ev, url, old){

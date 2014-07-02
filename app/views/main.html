@@ -1,4 +1,4 @@
-<div class="home-view" ui-view></div>
+<div class="home-view view-overlay reveal-animation" ng-class="{active: $state.includes('home.videos') || $state.includes('home.photos')}" ui-view></div>
 <section class="top-promotion">
      <promotion class="big" promotion="page.promotions[0]"></promotion>
 </section>
@@ -6,7 +6,7 @@
 <section class="videos section" id="videos">
     <div class="content-wrapper">
       <h2 class="section-title">Videos</h2>
-      <carousel>
+      <carousel disable-animation="true">
           <slide ng-if="!page.full_videos" ng-repeat="videos in video_chunks" class="slide">
              <video-excerpt class="video flexibox" ng-repeat="v in videos" video="v">
             </video-excerpt>
@@ -32,7 +32,7 @@
 <section class="albums section" id="music">
     <div class="content-wrapper">
       <h2 class="section-title">Music</h2>
-      <carousel>
+      <carousel disable-animation="true">
           <slide ng-if="page.full_albums" ng-repeat="albums in album_chunks" class="slide">
                   <album-excerpt album="a" ng-repeat="a in albums" class="flexibox"></album-excerpt>
           </slide>
@@ -47,7 +47,7 @@
 <section class="photos section" id="photos">
    <div class="content-wrapper">
     <h2 class="section-title">Photos</h2>
-    <carousel>
+    <carousel disable-animation="true">
         <slide ng-repeat="images in image_chunks" class="slide">
             <photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
         </slide>
