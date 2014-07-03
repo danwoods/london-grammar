@@ -20,6 +20,7 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+
   grunt.config('env', grunt.option('env') || process.env.GRUNT_ENV || 'dev');
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -43,18 +44,16 @@ module.exports = function (grunt) {
       build: {
       }
     },
-    stagefiles: {
-      
-    },
-    bumpOnly : {
-      options : {
-         files: ['package.json', 'bower.json'],
-         commit: false
-      }
-    },
-    bumpCommit : {
-      
-    }
+    build: {
+      tasks: [
+      'clean:dist',
+      'wiredep',
+      'ngconstant'
+      ],
+      packageConfig: 'package',
+      packages: '*.json',
+      gitAdd: '--all'
+    },    
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -411,7 +410,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('build', [
+ /* grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -427,7 +426,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
-
+ */
   grunt.registerTask('default', [
     'newer:jshint',
     'test',

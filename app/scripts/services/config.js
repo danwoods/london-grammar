@@ -2,7 +2,7 @@ angular.module("services.config", [])
 
 .constant("package", {
 	"name": "lg",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"dependencies": {},
 	"devDependencies": {
 		"grunt": "^0.4.5",
@@ -28,6 +28,7 @@ angular.module("services.config", [])
 		"grunt-usemin": "^2.1.1",
 		"grunt-wiredep": "^1.7.0",
 		"jshint-stylish": "^0.2.0",
+		"grunt-bump-build-git": "latest",
 		"karma": "^0.12.16",
 		"karma-jasmine": "^0.1.5",
 		"karma-phantomjs-launcher": "^0.1.4",
@@ -43,7 +44,7 @@ angular.module("services.config", [])
 })
 
 .constant("env", {
-	"API": "http://xxx/london_grammar/cc/"
+	"API": "http://localhost/london_grammar/cc/"
 })
 
 .value("debug", true)

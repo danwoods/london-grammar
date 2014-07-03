@@ -1,6 +1,6 @@
 {
   "name": "prototype",
-  "version": "0.0.0",
+  "version": "0.1.4",
   "dependencies": {
     "angular": "1.2.16",
     "json3": "~3.3.1",
@@ -12,14 +12,14 @@
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
     "momentjs": "latest",
-    "jQuery": "latest",    
+    "jQuery": "latest",
     "nt-youtube": "git@github.com:josephniet/angular-youtube.git",
-    "restangular" : "latest",
-    "normalize-css" : "latest",
-    "angular-bootstrap" : "latest",
-    "imagesloaded" : "latest",
-    "jquery-waypoints" : "latest",
-    "angular-ui-router" : "latest"
+    "restangular": "latest",
+    "normalize-css": "latest",
+    "angular-bootstrap": "latest",
+    "imagesloaded": "latest",
+    "jquery-waypoints": "latest",
+    "angular-ui-router": "latest"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
