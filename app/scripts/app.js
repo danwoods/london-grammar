@@ -77,7 +77,7 @@ angular
       });
       */
   }])
-  .config(function(RestangularProvider, env) {
+  .config(['RestangularProvider', 'env', function(RestangularProvider, env) {
         RestangularProvider.setBaseUrl(env.API);
         RestangularProvider.setDefaultHttpFields({
             cache : false
@@ -89,7 +89,7 @@ angular
             return response;
             //return extractedResponse;
         });    
-    })
+    }])
     .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', '$state', 'env', 'packageInfo', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, $state, env, packageInfo){      
         window.$anchorScroll = $anchorScroll;
         window.env = env;
@@ -114,7 +114,7 @@ angular
         });
         $rootScope.$on("$stateChangeSuccess", function(ev, toState, toParams){
           console.log('$stateChangeSuccess', ev, toState);
-        })
+        });
         
         //bootstrap data.        
         Restangular.one('menu/').get({
