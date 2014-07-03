@@ -20,12 +20,41 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
-
+  grunt.config('env', grunt.option('env') || process.env.GRUNT_ENV || 'dev');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
     yeoman: appConfig,
+    
+   //Config settings
+   ngconstant: {
+      options: {  
+        name: 'services.config',
+        dest: '<%= yeoman.app %>/scripts/services/config.js',
+        constants: {
+          "package" : grunt.file.readJSON('package.json'),
+          env : grunt.file.readJSON('env.json')[ grunt.config.get('env') ]
+        },
+        values: {
+          debug: true
+        }
+      },
+      build: {
+      }
+    },
+    stagefiles: {
+      
+    },
+    bumpOnly : {
+      options : {
+         files: ['package.json', 'bower.json'],
+         commit: false
+      }
+    },
+    bumpCommit : {
+      
+    }
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
