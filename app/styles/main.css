@@ -154,7 +154,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
   }
 }
 @media all and (min-width: 800px) {
@@ -251,7 +251,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
   overflow: hidden;
 }
 .blocker2 {
@@ -693,6 +693,12 @@ article.video {
 .product-links .link {
   display: block;
 }
+.product-links .fa,
+.product-links .icon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
 .product-links .row {
   border: 1px solid black;
   padding: 0.5em;
@@ -702,6 +708,10 @@ article.video {
 .product-links .row:hover {
   background: black;
   color: white;
+}
+.product-links .row span {
+  display: inline-block;
+  vertical-align: middle;
 }
 .photo .photo-inner {
   margin: 0.5em;
