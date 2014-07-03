@@ -48,10 +48,22 @@ module.exports = function (grunt) {
       tasks: [
       'clean:dist',
       'wiredep',
-      'ngconstant'
+      'ngconstant',
+      'useminPrepare',
+      'concurrent:dist',
+      'autoprefixer',
+      'concat',
+      'ngmin',
+      'copy:dist',
+      'cdnify',
+      'cssmin',
+      'uglify',
+      'filerev',
+      'usemin',
+      'htmlmin'
       ],
       packageConfig: 'package',
-      packages: '*.json',
+      packages: 'package.json',
       gitAdd: '--all'
     },    
 
