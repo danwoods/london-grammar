@@ -22,7 +22,7 @@
 		</div>
 		<div class="product-links">
 			<a ng-href="{{l.link_url}}" target="{{l.link_target}}" class="row"  ng-repeat="l in a.links">
-				<i class="fa fa-{{l.link_type}}"></i>
+				<i class="{{l.link_type}}"></i>
 				<span>{{l.link_text}}</span>
 		</a>
 	</div>

@@ -77,8 +77,8 @@ angular
       });
       */
   }])
-  .config(function(RestangularProvider, configuration) {
-        RestangularProvider.setBaseUrl(configuration.API);
+  .config(function(RestangularProvider, env) {
+        RestangularProvider.setBaseUrl(env.API);
         RestangularProvider.setDefaultHttpFields({
             cache : false
         });
@@ -90,8 +90,10 @@ angular
             //return extractedResponse;
         });    
     })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', '$state', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, $state){      
-        window.$anchorScroll = $anchorScroll;      
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', '$state', 'env', 'packageInfo', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, $state, env, packageInfo){      
+        window.$anchorScroll = $anchorScroll;
+        window.env = env;
+        window.packageInfo = packageInfo;   
         window.$location = $location;
         window.$rootScope = $rootScope;
         window.$state = $state;

@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         name: 'services.config',
         dest: '<%= yeoman.app %>/scripts/services/config.js',
         constants: {
-          "package" : grunt.file.readJSON('package.json'),
+          "packageInfo" : grunt.file.readJSON('package.json'),
           env : grunt.file.readJSON('env.json')[ grunt.config.get('env') ]
         },
         values: {
