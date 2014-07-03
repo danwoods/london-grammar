@@ -2,7 +2,7 @@ angular.module("services.config", [])
 
 .constant("packageInfo", {
 	"name": "lg",
-	"version": "0.2.0+build.1404389307174",
+	"version": "0.2.0+build.1404396856458",
 	"dependencies": {},
 	"devDependencies": {
 		"grunt": "^0.4.5",

@@ -36,12 +36,7 @@ module.exports = function (grunt) {
         constants: {
           "packageInfo" : grunt.file.readJSON('package.json'),
           env : grunt.file.readJSON('env.json')[ grunt.config.get('env') ]
-        },
-        values: {
-          debug: true
         }
-      },
-      build: {
       }
     },
     build: {

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('prototypeApp').directive('share', ['$timeout', 'configuration', '$rootScope',
-function($timeout, configuration, $rootScope) {
+angular.module('prototypeApp').directive('share', ['$timeout', 'env', '$rootScope',
+function($timeout, env, $rootScope) {
   return {
     replace : true,
     scope : {
@@ -20,7 +20,7 @@ function($timeout, configuration, $rootScope) {
       scope.url = window.location.href;
       scope.$watch('slug', function(val) {
         if (val) {
-          scope.url = configuration.baseURL + val;
+          scope.url = env.baseURL + val;
           url = scope.url;
         }
       });
