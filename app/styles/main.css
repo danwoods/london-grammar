@@ -154,7 +154,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -251,7 +251,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
@@ -668,8 +668,7 @@ article.video {
 }
 @media all and (max-width: 800px) {
   .album.full .tracklist {
-    float: left;
-    padding-right: 2em;
+    float: right;
   }
   .album.full .title {
     font-size: 1.7em;
@@ -685,7 +684,7 @@ article.video {
   padding-right: 2em;
 }
 .album.full .product-links {
-  clear: left;
+  clear: none;
 }
 .track .track-number {
   margin-right: 0.5em;
