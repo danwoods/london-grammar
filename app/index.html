@@ -29,7 +29,7 @@
         <div class="header-inner">
             <ul class="social-nav">
               <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
-                <a href="{{n.url}}">
+                <a href="{{n.url}}" target="_blank">
                   <i class="fa" ng-class="n.css"></i>
                 </a>
               </li>
@@ -45,12 +45,12 @@
           </div>
           <nav class="main-menu">
             <!-- <a ng-repeat="i in menus.main" href="#{{i.url}}"> -->
-            <a ng-repeat="i in menus.main" link-handler link="i" href="">
+            <a ng-repeat="i in menus.main" link-handler link="i" href="{{i.url}}" ng-click="$parent.showMenu = 0">
             {{i.name}}
             </a>
             <ul class="social-nav nested">
               <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
-                <a href="{{n.url}}">
+                <a href="{{n.url}}" target="_blank">
                   <i class="fa" ng-class="n.css"></i>
                 </a>
               </li>

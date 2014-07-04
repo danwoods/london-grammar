@@ -860,7 +860,7 @@ article.video {
 }
 .header .menu-overlay .main-menu a:hover,
 .header .menu-overlay .main-menu a.active {
-  text-decoration: underline;
+  opacity: 0.5;
 }
 @media all and (max-width: 800px) {
   .header .menu-overlay {

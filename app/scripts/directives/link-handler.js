@@ -36,11 +36,12 @@ angular.module('prototypeApp')
             console.log('link type is: ', type);
             switch(type){
               case 'ext' :
-                  window.location.replace(link.url);
+                 // window.location.replace(link.url);
+                  window.open(link.url,'_blank');
               break;
               case 'anchor' :
-                  if ($location.path() !== '/'){
-                    $location.path('/');
+                  if ($location.path() !== '/home'){
+                    $location.path('/home');
                     var caller = $rootScope.$on('$routeChangeSuccess', function(){
                       caller();//only run once;
                        $timeout(function(){
