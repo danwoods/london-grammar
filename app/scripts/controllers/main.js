@@ -41,14 +41,14 @@ angular.module('prototypeApp')
         Restangular.one('video/').get({
         }).then(function(response) {
             $scope.videos = response.data;
-            $scope.video_chunks = breakIt($scope.videos);
+            $scope.video_chunks = breakIt($scope.videos, 2);
             console.log('vids', response.data);
         });
         
         Restangular.one('image/').get({
         }).then(function(response) {
             $scope.images = response.data;
-            $scope.image_chunks = breakIt($scope.images);
+            $scope.image_chunks = breakIt($scope.images, 2);
             console.log('imgs', response.data);
         });        
         
