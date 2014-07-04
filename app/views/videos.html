@@ -1,9 +1,15 @@
-<div class="content-wrapper">
-<back></back>
-<carousel>
-  <slide ng-repeat="v in videos" active="slide.active">
-    <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="videos"></select-slide>
-    <ng-include src="'partials/video_full.html'"></ng-include>
-  </slide>
-</carousel>
+<div class="videos-view">
+<div class="centerer">
+  <div class="center">
+    <div class="content-wrapper">
+      <a class="close" ui-sref="^"><i class="fa fa-times"></i></a>
+      <carousel disable-animation="true">
+        <slide ng-repeat="v in videos" active="slide.active">
+          <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="videos"></select-slide>
+          <ng-include src="'partials/video_full.html'"></ng-include>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
 </div>

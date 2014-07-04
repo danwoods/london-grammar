@@ -15,7 +15,6 @@ angular.module('prototypeApp')
    }
    format = format || 'MMMM Do YYYY, h:mm a';
    */
-   console.log('inputType, ', inputType);
    return $window.moment(value, inputType).format(format);
   };
  }]);

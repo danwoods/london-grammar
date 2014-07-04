@@ -1,0 +1,29 @@
+<article class="album excerpt">
+	<div class="album-inner">
+		<div class="media-container">
+			<img src="{{a.image.sizes.medium.url}}" width="{{a.image.sizes.medium.width}}" height="{{a.image.sizes.medium.height}}" alt="{{a.image.alt}}">
+		</div>		
+		<h2 class="title">{{a.title}}</h2>
+		<h4 class="subtitle date release-date">released {{ a.release_date | time:'DD.MM.YY':'YYYYMMDD' }}</h4>
+		<div class="divider"></div>
+		<div class="content" ng-bind-html="a.conten"></div>
+		<div class="tracklist">
+		  <span class="tracklisting-title">Tracklist</span>
+			<div ng-repeat="t in a.tracklisting" class="track excerpt">
+				<div class="track-inner">
+					<div class="track-header">
+						<span class="track-number">{{$index}}</span><span class="track-title">{{t.title}}</span>
+					</div>
+					<div class="extra-information" ng-show="state">
+						<div class="lyrics" ng-bind-html="t.lyrics"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="product-links">
+			<a ng-href="{{l.link_url}}" target="{{l.link_target}}" class="row"  ng-repeat="l in a.links">
+				<i class="{{l.link_type}}"></i>
+				<span>{{l.link_text}}</span>
+		</a>
+	</div>
+</article>

@@ -1,11 +1,12 @@
+<div class="home-view view-overlay reveal-animation" ng-class="{active: $state.includes('home.videos') || $state.includes('home.photos')}" ui-view></div>
 <section class="top-promotion">
      <promotion class="big" promotion="page.promotions[0]"></promotion>
 </section>
 
-<section class="videos section">
+<section class="videos section" id="videos">
     <div class="content-wrapper">
       <h2 class="section-title">Videos</h2>
-      <carousel>
+      <carousel disable-animation="true">
           <slide ng-if="!page.full_videos" ng-repeat="videos in video_chunks" class="slide">
              <video-excerpt class="video flexibox" ng-repeat="v in videos" video="v">
             </video-excerpt>
@@ -19,7 +20,7 @@
 <promotion class="lyric" promotion="page.promotions[1]"></promotion>
 
 
-<section class="tour  section">
+<section class="tour live section" id="live">
    <div class="content-wrapper">
     <h2 class="section-title">Live</h2>
     <ng-include src="'views/tour.html'"></ng-include>
@@ -28,22 +29,25 @@
 
 <promotion class="lyric" promotion="page.promotions[2]"></promotion>
 
-<section class="albums section">
+<section class="albums section" id="music">
     <div class="content-wrapper">
       <h2 class="section-title">Music</h2>
-      <carousel>
-          <slide ng-repeat="albums in album_chunks" class="slide">
-                  <ng-include src="'partials/album_full.html'" ng-repeat="a in albums"></ng-include>
+      <carousel disable-animation="true">
+          <slide ng-if="page.full_albums" ng-repeat="albums in album_chunks" class="slide">
+                  <album-excerpt album="a" ng-repeat="a in albums" class="flexibox"></album-excerpt>
+          </slide>
+          <slide ng-if="!page.full_albums" ng-repeat="a in albums" class="slide">
+              <album-full album="a"></album-full>
           </slide>
       </carousel>
     </div>
 </section>
 <promotion class="lyric" promotion="page.promotions[3]"></promotion>
 
-<section class="photos section">
+<section class="photos section" id="photos">
    <div class="content-wrapper">
     <h2 class="section-title">Photos</h2>
-    <carousel>
+    <carousel disable-animation="true">
         <slide ng-repeat="images in image_chunks" class="slide">
             <photo-excerpt class="flexibox" ng-repeat="i in images" image="i"></photo-excerpt>
         </slide>
@@ -53,7 +57,7 @@
 
 <promotion class="lyric" promotion="page.promotions[4]"></promotion>
 
-<section class="sign-up section SignUpCtrl">
+<section class="sign-up section SignUpCtrl" id="sign-up">
    <div class="content-wrapper">
     <ng-include src="'views/sign-up.html'" ng-controller="SignUpCtrl"></ng-include>
    </div>

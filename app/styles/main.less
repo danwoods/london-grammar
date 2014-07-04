@@ -1,4 +1,5 @@
 @import 'bootstrap/css/bootstrap.css';
+@import 'animations.less';
 @import 'prefixr.less';
 @import 'framework.less';
 @import 'promotion.less';
@@ -7,20 +8,25 @@
 @import 'photo';
 @import 'header';
 @import 'sign-up';
+@import 'footer';
+@import 'tour';
 @import url('http://fast.fonts.net/cssapi/88d543db-d0aa-493f-b42d-15aa829dc1c7.css');
+@import 'extended-icons';
 body {
 	background:#fff;
 	font-family:'BT Futura W01', sans-serif;
  -webkit-font-smoothing: antialiased;
  text-transform:uppercase;
- font-weight:300;
 }
 
 .section {
   padding:2em;
+  margin:1em 0;
+  @media all and (max-width:800px){
+    padding:2em 1em;
+  }  
 }
 .section-title {
-  font-weight: 100;
   text-align: center;
   margin-bottom: 1em;
   margin-top:0;
@@ -45,4 +51,16 @@ body {
 .content-wrapper {
   max-width:1050px;
   margin:0 auto;
+}
+.overlay {
+  .photo.full, .video.full {
+    margin:4em;
+    @media all and (max-width:800px){
+      margin:2em;
+    }
+  }
+}
+
+.carousel-controls {
+  margin-top:1em;
 }

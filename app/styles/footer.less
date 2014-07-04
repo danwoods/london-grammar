@@ -1,0 +1,30 @@
+.footer {
+  background:black;
+
+  .footer-inner {
+    padding:1em;
+    color:@grey4;
+  }
+  .mos-logo{
+    width:2.5em;
+  }
+  ul {
+    padding:0;
+    margin:0;
+  }
+  li {
+    vertical-align:middle;
+    display:inline-block;
+    &.mos a {
+      display:block;
+    }
+    &:before {
+      content: ' | ';
+    }
+    &:first-child:before {
+      content: '';
+    }
+  }
+  text-transform:none;
+  font-size:0.9em;
+}

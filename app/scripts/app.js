@@ -5,17 +5,46 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
+    'ngAnimate',
     'ngRoute',
     'restangular',
     'services.config',
     'nt-youtube',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
+  .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+    $urlRouterProvider.otherwise("/home");
+    $stateProvider
+      .state('home', {
+        url : "/home",
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .state('home.videos', {
+        url : "^/videos?id",
+        //templateUrl: "views/videos.html",
+        controller: "VideosCtrl",
+        reloadOnSearch : false,
+        templateUrl : function ($stateParams){
+          console.log('LOADNG VDEOS VEW');
+          return 'views/videos.html';
+        }
+      })
+      .state('home.photos', {
+        url : "^/photos?id",
+        //templateUrl: "views/videos.html",
+        controller: "PhotosCtrl",
+        reloadOnSearch : false,
+        templateUrl : 'views/photos.html'
+      })
+      ;
+     /*
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        name : 'home'
       })
       .when('/exmaples/releases', {
         templateUrl: 'views/exmaple-releases.html',
@@ -40,14 +69,16 @@ angular
       })
       .when('/photos/:id?', {
         templateUrl: 'views/photos.html',
-        controller: 'PhotosCtrl'
+        controller: 'PhotosCtrl',
+        reloadOnSearch : false
       })
       .otherwise({
         redirectTo: '/'
       });
-  })
-  .config(function(RestangularProvider, configuration) {
-        RestangularProvider.setBaseUrl(configuration.API);
+      */
+  }])
+  .config(['RestangularProvider', 'env', function(RestangularProvider, env) {
+        RestangularProvider.setBaseUrl(env.API);
         RestangularProvider.setDefaultHttpFields({
             cache : false
         });
@@ -58,11 +89,15 @@ angular
             return response;
             //return extractedResponse;
         });    
-    })
-    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', function($location, CacheService, $rootScope, Restangular, $route){      
-              
+    }])
+    .run(['$location', 'CacheService', '$rootScope', 'Restangular', '$route', '$anchorScroll', '$state', 'env', 'packageInfo', function($location, CacheService, $rootScope, Restangular, $route, $anchorScroll, $state, env, packageInfo){      
+        window.$anchorScroll = $anchorScroll;
+        window.env = env;
+        window.packageInfo = packageInfo;   
         window.$location = $location;
         window.$rootScope = $rootScope;
+        window.$state = $state;
+        $rootScope.$state = $state;
         window.showRelated = function(post){
             CacheService.put('post', post);
             console.log(post);
@@ -72,9 +107,13 @@ angular
             });            
         };
         $rootScope.$on('$routeChangeSuccess', function(ev, data){
+          console.log('route change, bazinga!', ev, data);
           if (data.$$route){
                 $rootScope.currentController = data.$$route.controller;
           }
+        });
+        $rootScope.$on("$stateChangeSuccess", function(ev, toState, toParams){
+          console.log('$stateChangeSuccess', ev, toState);
         });
         
         //bootstrap data.        

@@ -19,6 +19,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="prototypeApp" class="{{currentController}}">
+    <div class="body-inner" id="skrollr-body">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -28,7 +29,7 @@
         <div class="header-inner">
             <ul class="social-nav">
               <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
-                <a href="{{n.url}}">
+                <a href="{{n.url}}" target="_blank">
                   <i class="fa" ng-class="n.css"></i>
                 </a>
               </li>
@@ -43,20 +44,25 @@
             <i class="fa fa-times"></i>
           </div>
           <nav class="main-menu">
-            <a ng-repeat="i in menus.main" href="#/{{i.url}}">
+            <!-- <a ng-repeat="i in menus.main" href="#{{i.url}}"> -->
+            <a ng-repeat="i in menus.main" link-handler link="i" href="{{i.url}}" ng-click="$parent.showMenu = 0">
             {{i.name}}
             </a>
+            <ul class="social-nav nested">
+              <li class="social-item" ng-class="n.name" ng-repeat="n in menus.social">
+                <a href="{{n.url}}" target="_blank">
+                  <i class="fa" ng-class="n.css"></i>
+                </a>
+              </li>
+            </ul>            
           </nav>
         </div>
     </header>
     <div class="wrapper">
-        <div class="container" ng-view=""></div>
+        <div class="container" class="view" ui-view=""></div>
     </div>
-    <footer class="footer">
-        <div class="footer-inner">
-            
-        </div>
-    </footer>
+    </div>
+    <ng-include src="'partials/footer.html'"></ng-include>
     
     <script type="text/ng-template" id="template/carousel/carousel.html">
         <div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel" no-anim>
@@ -84,8 +90,9 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- build:js scripts/vendor.js -->
+    <!-- build:js(./) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jQuery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
@@ -103,12 +110,15 @@
     <script src="bower_components/eventEmitter/EventEmitter.js"></script>
     <script src="bower_components/eventie/eventie.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/jquery-waypoints/waypoints.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
-    <script src="scripts/vendor/skrollr.min.js"></script>
-    <script src="scripts/vendor/fitvids.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+         <script src="scripts/vendor/skrollr.min.js"></script>
+        <script src="scripts/vendor/fitvids.js"></script>
+        <script src="scripts/vendor/songkick.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/config.js"></script>
@@ -132,6 +142,10 @@
         <script src="scripts/directives/select-slide.js"></script>
         <script src="scripts/controllers/photos.js"></script>
         <script src="scripts/directives/photo-full.js"></script>
+        <script src="scripts/directives/album-full.js"></script>
+        <script src="scripts/directives/album-excerpt.js"></script>
+        <script src="scripts/directives/link-handler.js"></script>
+        <script src="scripts/directives/disable-animation.js"></script>
         <!-- endbuild -->
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52de4733263c4c40"></script>

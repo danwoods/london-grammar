@@ -42,9 +42,9 @@ body {
   font-size:14.5px;
   line-height:1.2em;
   -webkit-font-smoothing: antialiased;
-  font-weight:100;
+  font-weight:300;
   @media all and (max-width:650px){
-    font-size: 14px;
+    font-size: 12px;
   }  
 }
 
@@ -395,10 +395,45 @@ img {
 
 
 //temp;
-.blog.full, .album.full, article.video {
+.blog.full, .album, article.video {
   padding: 1.25em;
 //  background: white;
  // border: 1px solid;
-  margin: 1em 0;
+  //margin: 1em 0;
+  @media all and (max-width:800px){
+    padding:0.5em;
+  }
 }
 
+//sticky footer
+@media all and (min-width:800px){
+  html, body {
+    height: 100%;
+  }
+  .wrapper {
+     //margin-top: 3.9em;//clear header
+  }
+  .body-inner {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-top:3.3em;
+    padding-bottom:5em;
+    margin: 0 auto -4.15em /* the bottom margin is the negative value of the footer's height */
+  }
+}
+
+.view-overlay {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  overflow:hidden;
+  background:white;
+}
+.view-overlay.active {
+  z-index:9999;
+}

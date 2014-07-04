@@ -8,6 +8,7 @@
  .divider {
    border-bottom:1px solid black;
    margin: 1em 0;
+   margin-bottom:0;
  }
  .title {
    margin: 0.5em 0;
@@ -15,8 +16,48 @@
  .subtitle {
    margin:0;
  }
+ .content {
+  text-transform: none;
+  font-weight: 100;
+  font-size: 0.97em;
+ }
+ .tracklisting-title {
+   display:block;
+   margin-bottom:1em;
+   margin-top:1em;
+ }
 }
 
+
+.album.full {
+  overflow:hidden;
+  .title {
+    margin-top:0;
+  }
+  .title, .subtitle, .content, .divider, .tracklist {
+    float:right;
+    width:50%;
+  }
+  @media all and (max-width:800px){
+    .tracklist {
+      float:right;
+      //padding-right:2em;
+    }
+    .title {
+      font-size:1.7em;
+    }
+  }
+  .product-links, .media-container {
+    width:50%;
+    float:left;
+  }
+  .media-container, .product-links {
+    padding-right:2em;
+  }
+  .product-links {
+    clear:none;
+  }
+}
 
 
 
@@ -30,6 +71,12 @@
   .link {
     display:block;
   }
+  .fa, .icon {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.2em;
+    //display:none;//temp
+  }
  .row {
    border:1px solid black;
    padding:0.5em;
@@ -38,6 +85,10 @@
    &:hover {
      background:black;
      color:white;
+   }
+   span{
+    display: inline-block;
+    vertical-align: middle;  
    }
  }
 }

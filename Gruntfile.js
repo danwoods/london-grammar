@@ -21,11 +21,46 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  grunt.config('env', grunt.option('env') || process.env.GRUNT_ENV || 'dev');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
     yeoman: appConfig,
+    
+   //Config settings
+   ngconstant: {
+      options: {  
+        name: 'services.config',
+        dest: '<%= yeoman.app %>/scripts/services/config.js',
+        constants: {
+          "packageInfo" : grunt.file.readJSON('package.json'),
+          env : grunt.file.readJSON('env.json')[ grunt.config.get('env') ]
+        }
+      }
+    },
+    build: {
+      tasks: [
+      'clean:dist',
+      'wiredep',
+      'ngconstant',
+      'useminPrepare',
+      'concurrent:dist',
+      'autoprefixer',
+      'concat',
+      'ngmin',
+      'copy:dist',
+      'cdnify',
+      'cssmin',
+      'uglify',
+      'filerev',
+      'usemin',
+      'htmlmin'
+      ],
+      packageConfig: 'package',
+      packages: 'package.json',
+      gitAdd: '--all'
+    },    
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -194,6 +229,7 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
+              //js: ['concat'],
               css: ['cssmin']
             },
             post: {}
@@ -271,7 +307,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html', 'views/{,*/}*.html', 'partials/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -311,6 +347,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
+            'partials/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/*'
           ]
@@ -382,7 +419,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  grunt.registerTask('build', [
+ /* grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -398,7 +435,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
-
+ */
   grunt.registerTask('default', [
     'newer:jshint',
     'test',

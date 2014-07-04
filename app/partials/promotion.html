@@ -1,7 +1,7 @@
 <article class="promotion skrollr-promo">
     <div class="promotion-inner">
-		<a ng-if="p.promo_target != '_self'" class="link-overlay" ng-href="{{p.promo_link}}" target="_blank"></a>
-		 <a ng-if="p.promo_target == '_self'" class="link-overlay" ng-href="{{p.promo_link}}"></a>
+		 <!--<a ng-if="p.promo_target != '_self'" class="link-overlay" ng-href="{{p.promo_link}}" target="_blank"></a>
+		 <a ng-if="p.promo_target == '_self'" class="link-overlay" ng-href="{{p.promo_link}}"></a> -->
 		 <div class="promotion-media">
 		     <div ng-if="p.video_background">
 		           <youtube-background yt-id="p.video_background.youtube_object.id"></youtube-background>
@@ -15,7 +15,7 @@
 	        	<div class="text-stuff-center">
 						 <h1 class="title">{{p.title}}</h1>
 						 <div class="content" ng-bind-html="p.content"></div>
-						 <div class="button promotion-button">{{p.promo_text}}</div>
+						 <a class="button promotion-button" ng-repeat="l in p.links" ng-href="{{l.link_url}}" target="{{l.link_target}}">{{l.link_text}}</a>
 				</div>
 			</div>
         </div>
