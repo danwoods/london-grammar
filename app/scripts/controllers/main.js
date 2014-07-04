@@ -46,6 +46,7 @@ angular.module('prototypeApp')
         });
         
         Restangular.one('image/').get({
+          tag: 'gallery'
         }).then(function(response) {
             $scope.images = response.data;
             $scope.image_chunks = breakIt($scope.images, 2);
@@ -86,18 +87,19 @@ angular.module('prototypeApp')
         });
         
         
-        $timeout(function(){
-            console.log('starting skrollr.');
-            var s = skrollr.init({
-              forceHeight : false
-            });
-            s.refresh();
-            window.skroll = s;
-        }, 4000);
-        $scope.$on('$destroy', function(){
-          if (typeof s !== 'undefined'){
-            s.destroy();
-          }
-        });
-        
+        if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){//skrollr breaks mobile atm...
+          $timeout(function(){
+              console.log('starting skrollr.');
+              var s = skrollr.init({
+                forceHeight : false
+              });
+              s.refresh();
+              window.skroll = s;
+          }, 4000);
+          $scope.$on('$destroy', function(){
+            if (typeof s !== 'undefined'){
+              s.destroy();
+            }
+          });
+        }
   }]);

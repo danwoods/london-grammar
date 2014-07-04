@@ -44,7 +44,7 @@ angular.module("services.config", [])
 })
 
 .constant("env", {
-	"API": "http://localhost/london_grammar/cc/"
+	"API": "http://london.thecreativecorporation.net/cc/"
 })
 
 .value("debug", true)

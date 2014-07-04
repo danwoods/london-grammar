@@ -1,6 +1,6 @@
 {
   "name": "lg",
-  "version": "0.3.0",
+  "version": "0.5.0+build.1404471664474",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",

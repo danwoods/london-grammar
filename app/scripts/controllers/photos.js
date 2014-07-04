@@ -10,7 +10,7 @@
 angular.module('prototypeApp')
   .controller('PhotosCtrl', ['$scope', '$stateParams', 'Restangular', "$location", function ($scope, $stateParams, Restangular, $location) {
        $scope.highlighted = $stateParams.id;
-       if (!$scope.images){
+       if (!$scope.images && true === false){//not running atm cuz inheritance.
          Restangular.one('image/').get({
           }).then(function(response) {
               $scope.images = response.data;
