@@ -154,7 +154,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -251,7 +251,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
@@ -689,11 +689,16 @@ article.video {
 .album.full .product-links {
   clear: none;
 }
+.track {
+  color: #9f9f9f;
+}
 .track .track-number {
   margin-right: 0.5em;
 }
-.product-links .link {
-  display: block;
+.track .track-inner {
+  border-bottom: 1px solid #C9C9C9;
+  padding-bottom: 0.5em;
+  font-size: 0.9em;
 }
 .product-links .fa,
 .product-links .icon {
@@ -703,13 +708,15 @@ article.video {
 }
 .product-links .row {
   border: 1px solid black;
+  background: black;
+  color: white;
   padding: 0.5em;
   display: block;
   margin: 0.5em 0;
 }
 .product-links .row:hover {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
 }
 .product-links .row span {
   display: inline-block;

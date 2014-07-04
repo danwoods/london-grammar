@@ -28,6 +28,7 @@
    display:block;
    margin-bottom:1em;
    margin-top:1em;
+   
  }
 }
 
@@ -65,14 +66,19 @@
 
 
 .track {
+  color:@grey3;
   .track-number {
     margin-right:0.5em;
+  }
+  .track-inner {
+    border-bottom: 1px solid #C9C9C9;
+    padding-bottom: 0.5em;
+    font-size: 0.9em;
   }
 }
 
 .product-links {
   .link {
-    display:block;
   }
   .fa, .icon {
     display: inline-block;
@@ -81,13 +87,16 @@
     //display:none;//temp
   }
  .row {
-   border:1px solid black;
+  display:block;
+  border:1px solid black;
+  background:black;
+  color:white;
    padding:0.5em;
    display:block;
    margin:0.5em 0;
    &:hover {
-     background:black;
-     color:white;
+     background:white;
+     color:black;
    }
    span{
     display: inline-block;
