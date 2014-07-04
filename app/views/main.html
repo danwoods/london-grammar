@@ -33,10 +33,10 @@
     <div class="content-wrapper">
       <h2 class="section-title">Music</h2>
       <carousel disable-animation="true">
-          <slide ng-if="page.full_albums" ng-repeat="albums in album_chunks" class="slide">
+          <slide ng-if="!page.full_albums" ng-repeat="albums in album_chunks" class="slide">
                   <album-excerpt album="a" ng-repeat="a in albums" class="flexibox"></album-excerpt>
           </slide>
-          <slide ng-if="!page.full_albums" ng-repeat="a in albums" class="slide">
+          <slide ng-if="page.full_albums" ng-repeat="a in albums" class="slide">
               <album-full album="a"></album-full>
           </slide>
       </carousel>

@@ -154,7 +154,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.333333333333336%;
+    width: 33.33333333%;
   }
 }
 @media all and (min-width: 800px) {
@@ -251,7 +251,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.333333333333336%;
+  width: 33.33333333%;
   overflow: hidden;
 }
 .blocker2 {
@@ -543,9 +543,9 @@ article.video {
 }
 .video.excerpt h4 {
   color: #111111;
-  font-size: 1em;
   text-transform: capitalize;
   text-align: left;
+  line-height: 1.2em;
 }
 .video.excerpt a {
   position: relative;
@@ -646,6 +646,9 @@ article.video {
   text-transform: none;
   font-weight: 100;
   font-size: 0.97em;
+}
+.album .track {
+  margin: 0.6em 0;
 }
 .album .tracklisting-title {
   display: block;
@@ -776,6 +779,24 @@ article.video {
 }
 .social-nav li .fa {
   font-size: 1.6em;
+}
+.social-nav li:hover.facebook {
+  color: #3481d2;
+}
+.social-nav li:hover.twitter {
+  color: #00bdd4;
+}
+.social-nav li:hover.soundcloud {
+  color: #ff7700;
+}
+.social-nav li:hover.youtube {
+  color: #fe415b;
+}
+.social-nav li:hover.instagram {
+  color: #3f729b;
+}
+.social-nav li:hover.google-plus {
+  color: #fe415b;
 }
 .menu-trigger {
   font-weight: 100;

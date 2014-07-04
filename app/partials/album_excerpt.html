@@ -12,7 +12,7 @@
 			<div ng-repeat="t in a.tracklisting" class="track excerpt">
 				<div class="track-inner">
 					<div class="track-header">
-						<span class="track-number">{{$index}}</span><span class="track-title">{{t.title}}</span>
+						<span class="track-number">{{$index+1}}.</span><span class="track-title">{{t.title}}</span>
 					</div>
 					<div class="extra-information" ng-show="state">
 						<div class="lyrics" ng-bind-html="t.lyrics"></div>
