@@ -1300,4 +1300,9 @@ body {
 }
 .carousel-controls {
   margin-top: 1em;
+  font-size: 1.75em;
+}
+.carousel-controls .r-arrow,
+.carousel-controls .middle {
+  vertical-align: middle;
 }

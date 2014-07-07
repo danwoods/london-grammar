@@ -69,7 +69,7 @@
             <div class="carousel-inner" ng-transclude=""></div>
             <div class="carousel-controls" ng-show="slides.length > 1">     
               <div class="prev r-arrow" ng-click="prev()" ng-show="slides.length > 1"><i class="icon icon-left-arrow"></i></div>
-              <span ng-repeat="slide in slides track by $index" ng-if="isActive(slide)">{{ $index + 1 }}</span> / {{slides.length}}
+              <span class="middle"><span ng-repeat="slide in slides track by $index" ng-if="isActive(slide)">{{ $index + 1 }}</span>/{{slides.length}}</span>
               <div class="next r-arrow" ng-click="next()"  ng-show="slides.length > 1"><i class="icon icon-right-arrow"></i></div>
             </div>
         </div>
