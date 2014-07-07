@@ -38,6 +38,11 @@ angular
         reloadOnSearch : false,
         templateUrl : 'views/photos.html'
       })
+      .state('related', {
+        url : '/_related/:type/:id',
+        templateUrl: 'views/_related.html',
+        controller: 'RelatedCtrl'
+      })
       ;
      /*
     $routeProvider

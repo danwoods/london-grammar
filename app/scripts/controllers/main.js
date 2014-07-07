@@ -46,7 +46,7 @@ angular.module('prototypeApp')
         });
         
         Restangular.one('image/').get({
-          tag: 'gallery'
+          tag: 'gallery,instagram'
         }).then(function(response) {
             $scope.images = response.data;
             $scope.image_chunks = breakIt($scope.images, 2);
