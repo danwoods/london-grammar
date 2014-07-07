@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('prototypeApp')
-  .controller('RelatedCtrl', ['$scope', 'Restangular', '$routeParams', function ($scope, Restangular, $routeParams) {
+  .controller('RelatedCtrl', ['$scope', 'Restangular', '$stateParams', function ($scope, Restangular, $stateParams) {
      // $scope.post = CacheService.get('post');
-     console.log('$routeParams', $routeParams);
-     Restangular.one($routeParams.type + '/').get({
-         id : $routeParams.id,
+     console.log('$stateParams', $stateParams);
+     Restangular.one($stateParams.type + '/').get({
+         id : $stateParams.id,
          include : 'related'
      }).then(function(response){
          console.log(response);

@@ -1,7 +1,12 @@
 <section class="summary">
-	Hi. The following related content types were found:
-	<span ng-repeat="(key, value) in post.related"> {{key}},
-	</span>
+  <div ng-show="post.related">
+  	The following related content types were found:
+  	<span ng-repeat="(key, value) in post.related"> {{key}},
+  	</span>
+  </div>
+  <div ng-hide="post.related">
+    No relationships found, sorry!
+  </div>
 </section>
 
 <section class="photos section">
