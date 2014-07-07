@@ -162,7 +162,7 @@ h1.superbig {
 }
 @media all and (min-width: 700px) {
   .flexibox {
-    width: 33.33333333%;
+    width: 33.333333333333336%;
   }
 }
 @media all and (min-width: 800px) {
@@ -259,7 +259,7 @@ h1.superbig {
 }
 .addthis_toolbox .engage-button {
   display: inline-block;
-  width: 33.33333333%;
+  width: 33.333333333333336%;
   overflow: hidden;
 }
 .blocker2 {
@@ -1211,8 +1211,8 @@ article.video {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon.eot?gisfv6');
-  src: url('../fonts/icomoon.eot?#iefixgisfv6') format('embedded-opentype'), url('../fonts/icomoon.woff?gisfv6') format('woff'), url('../fonts/icomoon.ttf?gisfv6') format('truetype'), url('../fonts/icomoon.svg?gisfv6#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?-8rz6nn');
+  src: url('../fonts/icomoon.eot?#iefix-8rz6nn') format('embedded-opentype'), url('../fonts/icomoon.woff?-8rz6nn') format('woff'), url('../fonts/icomoon.ttf?-8rz6nn') format('truetype'), url('../fonts/icomoon.svg?-8rz6nn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1243,6 +1243,12 @@ article.video {
 }
 .icon-roughtrade:before {
   content: "\e604";
+}
+.icon-left-arrow:before {
+  content: "\e605";
+}
+.icon-right-arrow:before {
+  content: "\e606";
 }
 body {
   background: #fff;
