@@ -6,7 +6,7 @@
       <carousel disable-animation="true">
         <slide ng-repeat="i in images" active="slide.active">
           <select-slide highlighted="highlighted" current-slide="slide" index="$index" slides="images"></select-slide>
-          <photo-full image="i"></photo-full>
+          <photo-full image="i" current-slide="slide"></photo-full>
         </slide>
       </carousel>
       </div>

@@ -460,6 +460,11 @@ article.video {
   font-size: 1.4em;
   line-height: 1.5em;
 }
+@media all and (max-width: 800px) {
+  .promotion.lyric .promotion-inner {
+    height: 14rem;
+  }
+}
 .promotion {
   overflow: hidden;
   /*@media all and (max-width:780px){
@@ -763,6 +768,9 @@ article.video {
   width: auto;
   display: block;
   margin: 0 auto;
+}
+.photo.full .meta {
+  overflow: hidden;
 }
 .photo.excerpt .photo-inner:hover .meta {
   opacity: 1;

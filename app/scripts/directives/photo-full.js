@@ -13,17 +13,18 @@ angular.module('prototypeApp')
         templateUrl : 'partials/photo_full.html',
         restrict : 'E',
         scope : {
-            i : '=image'
+            i : '=image',
+            currentSlide : "="
         },
-        link : function postLink(scope, element, attrs) {
+        link : function postLink($scope, element, attrs) {
             //stuff
             function init(){
               var img = element.find('.image-container img'),
                   header = $('.header'),
-                  meta = $('.meta'),
+                  meta = element.find('.meta'),
                   footer = $('.footer');
               function getAvailableHeight(){
-                var val = $(window).height() - ( meta.outerHeight(true) + footer.outerHeight(true) + header.outerHeight(true) ) - 300;//arbitrary value for padding...
+                var val = $(window).height() - ( meta.outerHeight(true)) - 100;//arbitrary value for padding...
                 //console.log(val);
                 return val;
               }
@@ -34,7 +35,12 @@ angular.module('prototypeApp')
                 });
               });
             }
-            init();
+            
+            $scope.$watch('currentSlide.active', function(val){
+              if (val){
+                $timeout(init, 0);
+              }
+            });
         }
     };
 }]);
