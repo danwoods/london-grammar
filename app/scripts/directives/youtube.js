@@ -20,8 +20,8 @@ function(makeYoutube, $rootScope, $http, $timeout) {
                                  // console.log('data!', data);
                                     scope.yt = data.items[0];
                             }).error(function(data,status,headers,config){
-                                console.log('error fetching yt meta', data, status)
-                            })
+                                console.log('error fetching yt meta', data, status);
+                            });
                     });
             }
             function construct(youtubeID) {
@@ -32,7 +32,10 @@ function(makeYoutube, $rootScope, $http, $timeout) {
                         rel : 0
                     },
                     events : {
-                        onReady : function() {
+                        onReady : function(evt) {
+                            scope.player = evt.target;
+                            scope.$emit('YTReady', evt);
+                            console.log('emitting');
                             element.fitVids();
                             $(element).animate({
                                 opacity : 1
@@ -44,7 +47,8 @@ function(makeYoutube, $rootScope, $http, $timeout) {
             scope.$watch('youtubeID', function(val) {
                 
                 if (val){
-                        construct(val);
+                    console.log('hm:', val);
+                    construct(val);
                     updateMeta(val);
                 }
             });

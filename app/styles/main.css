@@ -904,6 +904,11 @@ article.video {
   .header .menu-overlay {
     position: relative;
   }
+  .header .menu-overlay .main-menu > a {
+    line-height: 1em;
+    font-size: 1.3em;
+    margin: 0.75em 0;
+  }
   .header .menu-overlay a {
     display: block;
   }

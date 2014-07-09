@@ -24,7 +24,7 @@ angular.module('prototypeApp')
                   meta = element.find('.meta'),
                   footer = $('.footer');
               function getAvailableHeight(){
-                var val = $(window).height() - ( meta.outerHeight(true)) - 100;//arbitrary value for padding...
+                var val = $(window).height() - ( meta.outerHeight(true)) - 150;//arbitrary value for padding...
                 //console.log(val);
                 return val;
               }

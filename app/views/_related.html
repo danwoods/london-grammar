@@ -18,6 +18,24 @@
 	    <h1>{{v.title}}</h1>
 	</article>
 </section>
+
+<section class="tracks section">
+  <div class="tracklist">
+      <span class="tracklisting-title">Tracklist</span>
+      <div ng-repeat="t in post.related.tracks" class="track excerpt">
+        <div class="track-inner">
+          <div class="track-header">
+            <span class="track-number">{{$index+1}}.</span><span class="track-title">{{t.title}}</span>
+          </div>
+          <div class="extra-information" ng-show="state">
+            <div class="lyrics" ng-bind-html="t.lyrics"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
 <section class="">
 	
 </section>

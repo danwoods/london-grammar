@@ -20,6 +20,9 @@ function($location, $stateParams) {//directive for setting the slide on a carous
     link : function postLink($scope, element, attrs) {
       window.selectScope = $scope;
       var ran = 0;
+      $scope.$on('YTReady', function(val){
+        console.log('caught YTready', val);
+      });
       function init() {
         $scope.$watch('highlighted', function(val) {
           var slide;
