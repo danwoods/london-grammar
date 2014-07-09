@@ -8,10 +8,11 @@
  * Controller of the lgApp
  */
 angular.module('prototypeApp')
-  .controller('SignUpCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('SignUpCtrl', ['$scope', 'Restangular', function ($scope, Restangular) {
+        Restangular.one('page/').get({
+            slug : "sign-up"
+        }).then(function(response){
+            $scope.page = response.data;
+            console.log('sign up', response.data);
+        });
+  }]);

@@ -77,15 +77,7 @@ angular.module('prototypeApp')
             
             $scope.album_chunks = breakIt($scope.albums);
             console.log('albums', response.data);
-        });
-        
-        Restangular.one('page/').get({
-            slug : "contact"
-        }).then(function(response){
-            $scope.contactPage = [response.data];
-            console.log('contact', response.data);
-        });
-        
+        });       
         
         if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){//skrollr breaks mobile atm...
           $timeout(function(){
