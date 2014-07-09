@@ -890,7 +890,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (733, 102, '_thumbnail_id', '130'),
 (734, 42, 'links_0_link_url', 'http://www.google.com'),
 (735, 42, '_links_0_link_url', 'field_538c59426309c'),
-(736, 42, 'links_0_link_text', 'Buy Now'),
+(736, 42, 'links_0_link_text', 'Available Now'),
 (737, 42, '_links_0_link_text', 'field_538c59466309d'),
 (738, 42, 'links_0_link_target', '_blank'),
 (739, 42, '_links_0_link_target', 'field_538c59586309e'),
